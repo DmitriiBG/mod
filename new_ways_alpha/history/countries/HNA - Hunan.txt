@@ -6,9 +6,15 @@ set_technology = {
 }
 
 set_popularities = {
-	fascism = 0
-	neutrality = 100
-	communism = 0
+	fascism = 5
+	neutrality = 73
+	communism = 4
+	democratic = 17
+	neutrality = 0
+	monarchy = 0
+	trozkism = 1
+	anarchism = 0
+	technocracy = 0
 }
 
 set_politics = {
@@ -28,18 +34,47 @@ create_country_leader = {
 	}
 }
 
-1939.1.1 = {
-
-	add_political_power = 1198
-	set_stability = 0.4
-	set_war_support = 0.5
-
-	#doctrines
-	soldier_citizen = 1
-
-	add_ideas = {
-		PRC_government_corruption
-		CHI_ineffective_bureaucracy_warlord
-		CHI_army_corruption_1
-		CHI_incompetent_officers
+create_country_leader = {
+	name = "Zhao Hengti"
+	desc = "POLITICS_ZHAO_HENGTI_DESC"
+	picture = "Portrait_Australia_John_Curtin.dds"
+	expire = "1965.1.1"
+	ideology = socialism
+	traits = {
+		socialist_trait
 	}
+}
+
+create_country_leader = {
+	name = "Eric Campbell"
+	desc = "POLITICS_CHEN_QUZHEN_DESC"
+	picture = "GFX_AST_eric_campbell"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Richard Dixon"
+	desc = "POLITICS_LONG_YUNFEI_DESC"
+	picture = "GFX_AST_richard_dixon"
+	expire = "1965.1.1"
+	ideology = stalinism
+	traits = {
+		#
+	}
+}
+
+recruit_character = HNA_he_jian
+
+#doctrines
+soldier_citizen = 1
+
+add_ideas = {
+	PRC_government_corruption
+	CHI_ineffective_bureaucracy_warlord
+	CHI_army_corruption_1
+	CHI_incompetent_officers
+}
