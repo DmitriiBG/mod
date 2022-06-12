@@ -427,3 +427,13 @@
 		conscription = global.var_unity_of_islamic_union_conscription
 		war_support_factor = global.var_unity_of_islamic_union_war_support
 	}
+
+	state_autonomy_modifier_dyn = {
+		icon = GFX_autonomy_free_icon
+		
+		# list of modifiers
+		state_autonomy_modifier_dyn_pol_power = 12
+		political_power_gain = -10
+		stability_factor = -0.15
+		war_support_factor = -0.5
+	}

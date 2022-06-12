@@ -878,4 +878,6 @@
     infra_in_state_dyn:0 "Эффект от региона"
     state_elephants_modifier_dyn:0 "Слоны в регионе"
     state_elephants_modifier_dyn_tt:0 "В этом регионе водятся слоны."
-    
+
+    #Autonomy 
+    state_autonomy_modifier_dyn:0 "Автономия Сянси"

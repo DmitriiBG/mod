@@ -9,9 +9,11 @@ state={
 	state_category = town
 	local_supplies=0.0
 	history={
-		owner = CHI
+		owner = HNA
 		add_core_of = CHI
 		add_core_of = PRC
+		add_core_of = HNA
+		add_dynamic_modifier = { modifier = state_autonomy_modifier_dyn }
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 2
