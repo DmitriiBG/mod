@@ -1,0 +1,33 @@
+HNA_hunan_policy_category = {
+	
+	HNA_hunan_policy = {
+
+		icon = GFX_decision_generic_arrest
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = HNA
+		}
+
+		available = {
+			is_subject = no
+			#BHU
+			controls_state = 602
+		}
+
+		visible = {
+			original_tag = TIB
+		}
+
+		complete_effect = {
+		}
+
+#		ai_will_do = {
+#			factor = 200
+#			modifier = {
+#				factor = 0
+#				is_historical_focus_on = yes
+#			}
+#		}
+	}
+}
