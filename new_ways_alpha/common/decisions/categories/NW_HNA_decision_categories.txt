@@ -13,32 +13,23 @@ HNA_mobilize_militia = {
 	priority = 95
 }
 
+form_tibetan_empire_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_himalayas
+
+	allowed = {
+		has_dlc = "Waking the Tiger"
+	}
+}
+
 HNA_hunan_policy_category = {
 	icon = GFX_decision_generic_arrest
+
+	picture = GFX_decision_cat_generic_himalayas
+	
 	allowed = {
 		original_tag = HNA
 	}
-	visible = {
-	}
-	cost = 100
-
-	days_remove = 35
-	available = {
-		has_war = yes
-		has_full_control_of_state = 602
-		has_country_flag = { flag = HNA_mobilize_units_raised_flag days > 30 }
-		custom_trigger_tooltip = {
-			tooltip = HNA_mobilize_units_raised_flag_tt
-			has_country_flag = {
-				flag = HNA_mobilize_units_raised_flag
-				days > 30
-			}
-		}
-	}
-	complete_effect = {
-	}
-
-	remove_effect = {
-	}
-	priority = 21
 }

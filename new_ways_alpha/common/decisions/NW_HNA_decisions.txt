@@ -1,23 +1,38 @@
 HNA_hunan_policy_category = {
 	
 	HNA_hunan_policy = {
-
 		icon = GFX_decision_generic_arrest
-		fire_only_once = yes
+		cost = 100
+		fire_only_once = no
+		days_re_enable = 35
+		priority = 21
 
 		allowed = {
 			original_tag = HNA
 		}
 
-		available = {
-			is_subject = no
-			#BHU
-			controls_state = 602
+		visible = {
+			original_tag = HNA
 		}
 
-		visible = {
-			original_tag = TIB
+		available = {
+			is_subject = no
+			controls_state = 602
+			has_war = yes
+			has_full_control_of_state = 602
+#			has_country_flag = { flag = HNA_mobilize_units_raised_flag days > 30 }
+#			custom_trigger_tooltip = {
+#				tooltip = HNA_mobilize_units_raised_flag_tt
+#				has_country_flag = {
+#					flag = HNA_mobilize_units_raised_flag
+#					days > 30
+#				}
+#			}
 		}
+
+		remove_effect = {
+		}
+
 
 		complete_effect = {
 		}
