@@ -18,31 +18,167 @@ HNA_hunan_policy_category = {
 		available = {
 			is_subject = no
 			controls_state = 602
-			has_war = yes
+			#has_war = yes
 			has_full_control_of_state = 602
-#			has_country_flag = { flag = HNA_mobilize_units_raised_flag days > 30 }
-#			custom_trigger_tooltip = {
-#				tooltip = HNA_mobilize_units_raised_flag_tt
-#				has_country_flag = {
-#					flag = HNA_mobilize_units_raised_flag
-#					days > 30
-#				}
-#			}
 		}
 
 		remove_effect = {
 		}
 
-
 		complete_effect = {
+			hidden_effect = {
+				division_template = {
+					name = "Hunan militia"
+					division_names_group = HNA_MIL_01
+					is_locked = yes
+
+					regiments = {
+						penal_battalion = { x = 0 y = 0 }
+						penal_battalion = { x = 0 y = 1 }
+						penal_battalion = { x = 0 y = 2 }
+						penal_battalion = { x = 1 y = 0 }
+						penal_battalion = { x = 1 y = 1 }
+						penal_battalion = { x = 1 y = 2 }
+						penal_battalion = { x = 2 y = 0 }
+						penal_battalion = { x = 2 y = 1 }
+						penal_battalion = { x = 2 y = 2 }
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						division = "division_template = \"Hunan militia\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+						owner = ROOT
+						count = 4
+					}
+				}
+			}
+		}
+	}
+}
+
+#5)  SIH существует и полностью независимо, доступно, если идеология SIH - фашизм):
+# если популярность фашизма выше 64 %, то HNA станет марионеткой SIH, 
+# если HNA до этого была чьем-либо субъектом, то она получит событие «Предательство губернатора Хунани», 
+# иначе если популярность фашизма выше 30 % и были выполнены решения «Найти поддержку в правительстве провинции» и 
+# «Найти поддержку среди военных», то HNA станет марионеткой SIH, у HNA произойдёт событие «Восстание против Игуаньдао»,
+
+# если HNA до этого была чьем-либо субъектом, то она получит событие «Предательство губернатора Хунани», 
+# иначе если HNA является чьем-либо субъектом, то произойдёт событие «Заговор против Хе Цзяна» I, 
+#иначе произойдёт событие «Заговор против Хе Цзяна» II 
+
+HNA_hunan_mission_category = {
+
+	HNA_hunan_army_support = {
+		icon = GFX_decision_generic_arrest
+		cost = 100
+		fire_only_once = yes
+		priority = 21
+		add_popularity = {
+			ideology = fascism
+			popularity = +0.3
+		}
+		add_command_power = -25
+		allowed = {
+			original_tag = HNA
 		}
 
-#		ai_will_do = {
-#			factor = 200
-#			modifier = {
-#				factor = 0
-#				is_historical_focus_on = yes
-#			}
-#		}
+		visible = {
+			original_tag = HNA
+		}
+
+		available = {
+			is_subject = no
+		}
+	}
+	HNA_hunan_army_ideology = {
+		icon = GFX_decision_generic_arrest
+		cost = 25
+		fire_only_once = no
+		priority = 21
+		days_re_enable = 120
+
+		add_popularity = {
+			ideology = fascism
+			popularity = +0.15
+		}
+		add_command_power = -5
+		allowed = {
+			original_tag = HNA
+		}
+
+		visible = {
+			original_tag = HNA
+		}
+
+		available = {
+			is_subject = no
+		}
+	}
+	HNA_hunan_government_support = {
+		icon = GFX_decision_generic_arrest
+		cost = 200
+		fire_only_once = yes
+		priority = 21
+
+		add_popularity = {
+			ideology = fascism
+			popularity = +0.3
+		}
+		add_stability = -0.05
+		allowed = {
+			original_tag = HNA
+		}
+
+		visible = {
+			original_tag = HNA
+		}
+
+		available = {
+			is_subject = no
+		}
+	}
+	HNA_hunan_missioners = {
+		icon = GFX_decision_generic_arrest
+		cost = 50
+		fire_only_once = no
+		priority = 21
+		days_re_enable = 120
+
+		add_popularity = {
+			ideology = fascism
+			popularity = +0.15
+		}
+		allowed = {
+			original_tag = HNA
+		}
+
+		visible = {
+			original_tag = HNA
+		}
+
+		available = {
+			is_subject = no
+		}
+	}
+	HNA_hunan_join_government = {
+		icon = GFX_decision_generic_arrest
+		cost = 50
+		fire_only_once = yes
+		priority = 21
+
+		allowed = {
+			original_tag = HNA
+		}
+
+		visible = {
+			original_tag = HNA
+		}
+
+		available = {
+			is_subject = no
+		}
 	}
 }

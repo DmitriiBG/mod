@@ -912,7 +912,7 @@ on_actions = {
 					has_start_date < 1936.01.02
 				}
 				HNA = {
-					country_event = { id = HNA.91 days = 1 }
+					country_event = { id = HNA.1 days = 1 }
 				}
 			}
 			### Ирак стартпак

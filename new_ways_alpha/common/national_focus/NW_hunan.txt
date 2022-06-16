@@ -33,8 +33,9 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_end_building_railway"
-			# add_war_support = 0.1
-			# hidden_effect = { country_event = { days = 300 id = tibet.60 } }
+			build_railway = {
+				path = { 602 593 }
+			}
 		}
 	}
 

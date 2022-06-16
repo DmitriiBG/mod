@@ -526,8 +526,8 @@ sub_units = {
 			infantry_equipment = 85 #100 -> Same ratio as regular Infantry			
 		}
 	}
-	hna_home_guard = {
-		abbreviation = "PEN"
+	HNA_militia_battalion = {
+		abbreviation = "MIL"
 		sprite = infantry
 		map_icon_category = infantry
 		

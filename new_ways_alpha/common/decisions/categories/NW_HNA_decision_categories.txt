@@ -33,3 +33,14 @@ HNA_hunan_policy_category = {
 		original_tag = HNA
 	}
 }
+
+
+HNA_hunan_mission_category = {
+	icon = GFX_decision_generic_arrest
+
+	picture = GFX_decision_cat_generic_himalayas
+	
+	allowed = {
+		original_tag = HNA
+	}
+}
