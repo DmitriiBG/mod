@@ -909,10 +909,18 @@ on_actions = {
 			### HNA start events
 			if = {
 				limit = {
-					has_start_date < 1936.01.02
+					has_start_date < 1936.01.03
 				}
 				HNA = {
 					country_event = { id = HNA.1 days = 1 }
+				}
+			}
+			if = {
+				limit = {
+					has_start_date < 1936.01.06
+				}
+				HNA = {
+					country_event = { id = HNA.2 days = 1 }
 				}
 			}
 			### Ирак стартпак

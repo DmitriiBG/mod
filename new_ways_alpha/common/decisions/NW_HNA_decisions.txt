@@ -4,10 +4,13 @@ HNA_hunan_policy_category = {
 		icon = GFX_decision_generic_arrest
 		cost = 100
 		fire_only_once = no
-		days_re_enable = 35
+		days_remove = 30
 		priority = 21
 
+
 		allowed = {
+			check_variable = { HNA_hunan_militia < 4 }
+			#HNA_hunan_militia < 4
 			original_tag = HNA
 		}
 
@@ -16,6 +19,9 @@ HNA_hunan_policy_category = {
 		}
 
 		available = {
+			check_variable = { HNA_hunan_militia < 4 }
+			#HNA_hunan_militia < 4
+			has_manpower > 4000
 			is_subject = no
 			controls_state = 602
 			#has_war = yes
@@ -23,38 +29,46 @@ HNA_hunan_policy_category = {
 		}
 
 		remove_effect = {
+			add_to_variable = { HNA_hunan_militia = +1 }
+			capital_scope = {
+				create_unit = {
+					division = "division_template = \"Hunan Militia\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+					owner = ROOT
+					count = 1
+				}
+			}
 		}
 
 		complete_effect = {
+			set_technology = { infantry_weapons = 1 }
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1500
+			}
+			add_to_variable = { HNA_hunan_militia = +1 }
 			hidden_effect = {
-				division_template = {
-					name = "Hunan militia"
-					division_names_group = HNA_MIL_01
-					is_locked = yes
-
-					regiments = {
-						penal_battalion = { x = 0 y = 0 }
-						penal_battalion = { x = 0 y = 1 }
-						penal_battalion = { x = 0 y = 2 }
-						penal_battalion = { x = 1 y = 0 }
-						penal_battalion = { x = 1 y = 1 }
-						penal_battalion = { x = 1 y = 2 }
-						penal_battalion = { x = 2 y = 0 }
-						penal_battalion = { x = 2 y = 1 }
-						penal_battalion = { x = 2 y = 2 }
-					}
-					support = {
-						artillery = { x = 0 y = 0 }
-					}
+				set_technology = { 
+					infantry = 1
+					HNA_militia_infantry = 1 popup = no
+				 }
+			}
+			division_template = {
+				name = "Hunan Militia"
+				division_names_group = HNA_INF_01
+				is_locked = yes
+				regiments = {
+					HNA_militia_battalion = { x = 0 y = 0 }
+					HNA_militia_battalion = { x = 0 y = 1 }
+					HNA_militia_battalion = { x = 0 y = 2 }
+					HNA_militia_battalion = { x = 1 y = 0 }
+					HNA_militia_battalion = { x = 1 y = 1 }
+					HNA_militia_battalion = { x = 1 y = 2 }
 				}
-				capital_scope = {
-					create_unit = {
-						division = "division_template = \"Hunan militia\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
-						owner = ROOT
-						count = 4
-					}
+				support = {
+					artillery = { x = 0 y = 0 }
 				}
 			}
+
 		}
 	}
 }
@@ -76,11 +90,19 @@ HNA_hunan_mission_category = {
 		cost = 100
 		fire_only_once = yes
 		priority = 21
-		add_popularity = {
-			ideology = fascism
-			popularity = +0.3
+
+		complete_effect = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.03
+			}
+			add_command_power = -25
+			set_variable = { 
+				var = HNA_hunan_militia 
+				value = HNA_hunan_militia+1 
+			}
 		}
-		add_command_power = -25
+
 		allowed = {
 			original_tag = HNA
 		}
@@ -93,18 +115,22 @@ HNA_hunan_mission_category = {
 			is_subject = no
 		}
 	}
+
 	HNA_hunan_army_ideology = {
 		icon = GFX_decision_generic_arrest
 		cost = 25
 		fire_only_once = no
 		priority = 21
-		days_re_enable = 120
+		days_remove = 120
 
-		add_popularity = {
-			ideology = fascism
-			popularity = +0.15
+		complete_effect = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.015
+			}
+			add_command_power = -5
 		}
-		add_command_power = -5
+
 		allowed = {
 			original_tag = HNA
 		}
@@ -117,17 +143,19 @@ HNA_hunan_mission_category = {
 			is_subject = no
 		}
 	}
+
 	HNA_hunan_government_support = {
 		icon = GFX_decision_generic_arrest
 		cost = 200
 		fire_only_once = yes
 		priority = 21
-
-		add_popularity = {
-			ideology = fascism
-			popularity = +0.3
+		complete_effect = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.03
+			}
+			add_stability = -0.05
 		}
-		add_stability = -0.05
 		allowed = {
 			original_tag = HNA
 		}
@@ -140,16 +168,18 @@ HNA_hunan_mission_category = {
 			is_subject = no
 		}
 	}
+
 	HNA_hunan_missioners = {
 		icon = GFX_decision_generic_arrest
 		cost = 50
 		fire_only_once = no
 		priority = 21
-		days_re_enable = 120
-
-		add_popularity = {
-			ideology = fascism
-			popularity = +0.15
+		days_remove = 120
+		complete_effect = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.015
+			}
 		}
 		allowed = {
 			original_tag = HNA
@@ -163,6 +193,7 @@ HNA_hunan_mission_category = {
 			is_subject = no
 		}
 	}
+
 	HNA_hunan_join_government = {
 		icon = GFX_decision_generic_arrest
 		cost = 50

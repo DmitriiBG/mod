@@ -37,7 +37,7 @@ country_event = {
 	trigger = {
 		tag = HNA
 		date > 1936.1.06
-		has_start_date < 1936.01.07
+		has_start_date < 1936.01.08
 	}	
 
 	mean_time_to_happen = { days = 10 }
