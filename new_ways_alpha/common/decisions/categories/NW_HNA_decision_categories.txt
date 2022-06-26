@@ -42,5 +42,6 @@ HNA_hunan_mission_category = {
 	
 	allowed = {
 		original_tag = HNA
+		has_country_leader = { name = "He Jian" ruling_only = yes }
 	}
 }

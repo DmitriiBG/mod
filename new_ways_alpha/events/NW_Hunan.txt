@@ -49,32 +49,26 @@ country_event = {
 	option = {
 		name = HNA.2.a
 		HNA = {
-			country_event = { id = HNA.2 days = 3 }
+			country_event = { id = HNA.3 days = 3 }
 		}
 	}
 }
 
 country_event = {
-	id = HNA.2
-	title = HNA.2.t
-	desc = HNA.2.desc
+	id = HNA.3
+	title = HNA.3.t
+	desc = HNA.3.desc
 	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	fire_only_once = yes
-	
-	trigger = {
-		tag = HNA
-		date > 1936.1.06
-		has_start_date < 1936.01.08
-	}	
 
 	mean_time_to_happen = { days = 2 }
 	
 	immediate = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.2"
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.3"
 	}
 	
 	option = {
-		name = HNA.2.a
+		name = HNA.3.a
 	}
 }
