@@ -3,6 +3,13 @@
 set_technology = {
 	#doctrines
 	armed_people = 1
+	infantry_weapons = 1
+	HNA_militia_infantry = 1 popup = no
+}
+
+add_equipment_to_stockpile = {
+	type = infantry_equipment
+	amount = 1500
 }
 
 set_popularities = {

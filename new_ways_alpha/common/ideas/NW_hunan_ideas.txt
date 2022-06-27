@@ -14,9 +14,6 @@ ideas = {
 				army_org_factor = +0.1
 				war_support_factor = +0.1
 			}
-			research_bonus = {
-				infantry_weapons = +0.05
-			}
 		}
 		HNA_reformed_police = {
 			allowed = { always = no }
@@ -34,7 +31,22 @@ ideas = {
 				training_time_factor = -0.25
 			}
 		}
-
+		HNA_new_exemplary_police = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				conscription_factor = +1
+				army_org_factor = +0.1
+				war_support_factor = +0.1
+				mobilization_speed = +0.15
+				training_time_factor = -0.25
+			}
+		}
 		HNA_reformed_police_2 = {
 			allowed = { always = no }
 			available = {
@@ -204,7 +216,10 @@ ideas = {
 			modifier = {
 				stability_factor = -0.05
 				consumer_goods_factor = -0.03
-				experience_gain_army_factor = 0.15
+				experience_gain_army = 0.03
+			}
+			research_bonus = {
+				infantry_weapons = +0.05
 			}
 		}
 		XSM_idea_chinese_cliqe = {
@@ -237,9 +252,65 @@ ideas = {
 			}
 			picture = taxes_on_monasteries
 			modifier = {
-				stability_factor = 0.01
+				stability_factor = 0.1
 				consumer_goods_factor = 0.05
 				production_speed_hospital_factor = 0.03
+			}
+		}
+		HNA_increase_social_spending_2 = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = 0.1
+				consumer_goods_factor = 0.05
+				production_speed_hospital_factor = 0.03
+				research_speed_factor = -0.02
+			}
+		}
+		HNA_uprising_xiangxi = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = -0.2
+				political_power_gain = -0.2 
+			}
+		}
+		HNA_economy_growth = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				#Rost Объём заводского производства +5 %,  TODO
+			}
+		}
+		HNA_rise_of_crime = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = -0.1
+				political_power_gain = -0.03 
+				production_speed_buildings_factor = -0.01
+				#Объём заводского производства -1 %,  TODO
 			}
 		}
 	}

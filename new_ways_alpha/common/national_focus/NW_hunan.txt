@@ -36,6 +36,7 @@ focus_tree = {
 			build_railway = {
 				path = { 602 593 }
 			}
+			country_event = { id = HNA.11 }
 		}
 	}
 
@@ -88,6 +89,7 @@ focus_tree = {
 				ideology = fascism
 				popularity = 0.05
 			}
+			country_event = { id = HNA.12 }
 	 	}
 	}
 
@@ -139,7 +141,6 @@ focus_tree = {
 	   	}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_complete_reform_militia_system"	
-			remove_ideas = HNA_high_local_police
 			swap_ideas = {
 				remove_idea = HNA_high_local_police
 				add_idea = HNA_reformed_police
@@ -170,7 +171,7 @@ focus_tree = {
 			750 = {
 				add_extra_state_shared_building_slots = 1
 			}
-			stability_factor = 0.03
+			add_stability = 0.03
 			add_political_power = 25
 		}
 	}
@@ -248,6 +249,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_xiangxi_autonomy"	
+			country_event = { id = HNA.13 }
 		}
 	}
 
@@ -295,7 +297,11 @@ focus_tree = {
 		bypass = {
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_expand_schools_poor"	
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_expand_schools_poor"
+			swap_ideas = {
+				remove_idea = HNA_increase_social_spending
+				add_idea = HNA_increase_social_spending_2
+			}
 		}
 	}
 	focus = {
@@ -394,6 +400,7 @@ focus_tree = {
 	
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_send_agitators_to_xiangxi"
+			#TODO Add 2 units
 		}
 	}
 
@@ -437,12 +444,14 @@ focus_tree = {
 		}
 	
 		available = {
+			has_civil_war = no
 		}
 		
 		bypass = {
 		}
 	
 		completion_reward = {
+			# Если фокус выполнен позже чем через 100 после окончания ГВ, то произойдёт событие «Сопротивление независимых армий»: 27 TODO
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_stop_local_army"
 		}
 	}
@@ -494,8 +503,8 @@ focus_tree = {
 	
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_worldwide_autonomy"
-			stability_factor = 0.07
-			war_support_factor = 0.07
+			add_stability = 0.07
+			war_support = 0.07
 		}
 	}
 	focus = {
@@ -571,10 +580,9 @@ focus_tree = {
 				ideology = neutrality
 				popularity = 0.05
 			}
-			add_stability = 0.07
+			add_stability = 0.15
 		}
 	}
-	#####
 	focus = {
 		id = HNA_take_he_reforms
 		icon = GFX_z_goal_buddism_yang_move
@@ -595,7 +603,15 @@ focus_tree = {
 	
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_take_he_reforms"
-			# country_event = { days = 1 id = tibet.1 }
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			add_ideas = HNA_economy_growth
 		}
 	}
 	focus = {
@@ -618,7 +634,11 @@ focus_tree = {
 	
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_exemplary_police"
-			# country_event = { days = 1 id = tibet.1 }
+			swap_ideas = {
+				remove_idea = HNA_reformed_police
+				add_idea = HNA_new_exemplary_police
+			}
+			remove_idea = HNA_rise_of_crime
 		}
 	}
 	focus = {
@@ -641,7 +661,7 @@ focus_tree = {
 	
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_remind_rep_hunan"
-			# country_event = { days = 1 id = tibet.1 }
+			# TODO
 		}
 	}
 	focus = {
@@ -662,9 +682,11 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_king_is_back"
-			add_stability = 0.05
-			add_ideas = { HNA_reformed_police_2 }
-			#Нацдух «Реформированная милиция» потеряет эффекты: Скорость мобилизации +15 %, Время подготовки дивизии -25 %
+			add_stability = 0.15
+			swap_ideas = {
+				remove_idea = HNA_reformed_police
+				add_idea = HNA_reformed_police_2
+			}
 		}
 	}
 	focus = {
@@ -874,7 +896,12 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_old_opium_connections"
-			# country_event = { days = 1 id = tibet.1 }
+			750 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			602 = {
+				add_extra_state_shared_building_slots = 1
+			}
 		}
 	}
 	focus = {
@@ -936,6 +963,8 @@ focus_tree = {
 		}
 
 		available = {
+			#todo if SIH has ideas
+			#SIH = { has_idea =  }
 		}
 		
 		bypass = {
@@ -943,7 +972,20 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_sichuan_hunan_guanxi"
-			# country_event = { days = 1 id = tibet.1 }
+			750 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			602 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
