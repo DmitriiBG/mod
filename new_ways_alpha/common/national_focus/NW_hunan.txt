@@ -369,7 +369,6 @@ focus_tree = {
 
 		available = {
 			has_country_leader = { name = "Zhao Hengti" ruling_only = yes }
-			NOT = { has_completed_focus = HNA_end_building_railway }
 		}
 		
 		bypass = {
@@ -400,7 +399,27 @@ focus_tree = {
 	
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_send_agitators_to_xiangxi"
-			#TODO Add 2 units
+			division_template = {
+				name = "Hunan Agitators"
+				division_names_group = HNAA_INF_01
+				is_locked = yes
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+				}
+				support = {
+					artillery = { x = 0 y = 0 }
+				}
+			}
+			7279 = {
+				create_unit = {
+					division = "division_template = \"Hunan Agitators\""
+					owner = ROOT
+					count = 2
+				}
+			}
 		}
 	}
 
@@ -504,7 +523,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_worldwide_autonomy"
 			add_stability = 0.07
-			war_support = 0.07
+			add_war_support = 0.07
 		}
 	}
 	focus = {
@@ -675,6 +694,7 @@ focus_tree = {
 		}
 
 		available = {
+			has_country_leader = { name = "Chen Quzhen" ruling_only = yes }
 		}
 		
 		bypass = {
@@ -748,6 +768,10 @@ focus_tree = {
 		}
 
 		available = {
+			SHX = {
+				has_country_leader = { name = "SHX_yan_xishan" ruling_only = yes }
+				has_civil_war = no
+			}
 		}
 		
 		bypass = {
@@ -755,7 +779,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_establish_connections_xishan"
-			# country_event = { days = 1 id = tibet.1 }
+			country_event = { id = HNA.32 }
+			#HNA = {
+			#	add_opinion_modifier = { target = SHX modifier = axis_leanings_focus } 
+			#} add + 50 relations
 		}
 	}
 	focus = {
@@ -873,7 +900,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_start_building_villages"
-			# country_event = { days = 1 id = tibet.1 }
+			750 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = hospital
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -947,7 +981,21 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_expand_own_weapons_production"
-			# country_event = { days = 1 id = tibet.1 }
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -999,6 +1047,7 @@ focus_tree = {
 		}
 
 		available = {
+			has_country_leader = { name = "Long Yunfei" ruling_only = yes }
 		}
 		
 		bypass = {
@@ -1006,7 +1055,14 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_xiangxi_rules_province"
-			# country_event = { days = 1 id = tibet.1 }
+			750 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -1030,7 +1086,9 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_complete_elimination_tongtian"
-			# country_event = { days = 1 id = tibet.1 }
+			750 = {
+				remove_dynamic_modifier = { modifier = state_autonomy_modifier_dyn }
+			}
 		}
 	}
 	focus = {
@@ -1054,7 +1112,10 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_rotate_tongtian_for_miao"
-			# country_event = { days = 1 id = tibet.1 }
+			add_ideas = HNA_provincial_tun
+			750 = {
+				remove_dynamic_modifier = { modifier = state_autonomy_modifier_dyn }
+			}
 		}
 	}
 	focus = {
@@ -1077,7 +1138,16 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_support_free_agenda"
-			# country_event = { days = 1 id = tibet.1 }
+			#TODO Отношения с авторитарными китайскими кликами +25 
+			#todo Отношения с коммунистическими китайскими кликами -25 
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.05
+			}
 		}
 	}
 	focus = {
@@ -1100,7 +1170,27 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_miao_career_ladders"
-			# country_event = { days = 1 id = tibet.1 }
+			# TODO
+			add_ideas = HNA_tensions_among_bureaucracy
+			swap_ideas = {
+				remove_idea = HNA_provincial_tun
+				add_idea = HNA_provincial_tun_2
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
+			add_political_power = 100
+
+#Как только будут выполнены фокусы «Продвижение мяо по карьерным лестницам» и «Аграрная реформа в пользу мяо», а Чэнь Цюйчжэнь доступен в качестве генерала, то произойдёт событие «Переворот против Луна»:  30
+#«Подозрения Луна Юнфэя в сторону его нелояльности в случае занятия высокого поста в армейской структуре провинции полностью подтвердились: после того, как Лун проводить свои реформы, нацеленные на подъём статуса и положения народа мяо в структуре управления провинцией, это вызвало резкое недовольство старой бюрократии и элит, у которых происходит отъём их рабочих мест и земель, принадлежащих им долгие десятилетия. Чэнь воспользовался этим недовольством, возглавив заговор против Луна, и при помощи своего силового аппарата сверг губернатора провинции, сделав это, однако, бескровно: Юнфэю позволили под конвоем покинуть территорию провинции»: 
+#1)	«Король свергнут. Да здравствует Король!» (Чэнь Цюйчжэнь станет лидером HNA, Лун Юнфэй перестанет быть доступным в качестве генерала, будут убраны нацдухи «Предвзятая аграрная реформа» и «Напряженность среди бюрократии»)
+
+#Как только будут выполнены фокусы «Продвижение мяо по карьерным лестницам» и «Аграрная реформа в пользу мяо», а Чэнь Цюйчжэнь недоступен в качестве генерала, но не находится в тюрьме, то произойдёт событие «Восстание Чэня Цюйчжэня»: 31
+#«После того, как мы начали проводить реформы, нацеленные на подъём статуса и положения народа мяо в структуре управления провинцией, это вызвало резкое недовольство старой бюрократии и элит, у которых происходит отъём их рабочих мест и земель, принадлежащих им долгие десятилетия. Чэнь Цюйчжэнь, находящейся на свободе после смены губернаторов, воспользовался этим недовольством возглавив восстание против нашей власти из Западной Хунани»: 
+#1)	«Вновь война центра против Запада…» (в HNA начнётся ГВ между авторитаристами во главе с Лун Юнфэем и авторитаристами во главе с Чэнь Цюйчжэнем, последние получат регион 750, армия разделится в отношении 1:2)
+#2)	«Король мяо слишком распоясался» (в HNA начнётся ГВ между авторитаристами во главе с Лун Юнфэем и авторитаристами во главе с Чэнь Цюйчжэнем, последние получат регион 750, армия разделится в отношении 1:2, игрок пересядет на Чэнь Цюйчжэня)
+
 		}
 	}
 	focus = {
@@ -1123,7 +1213,17 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_support_anti_jap_agenda"
-			# country_event = { days = 1 id = tibet.1 }
+			add_war_support = 0.15
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			add_tech_bonus = {
+				name = HNA_support_anti_jap_agenda 
+				bonus = 0.25
+				uses = 1
+				category = land_doctrine
+			}
 		}
 	}
 	focus = {
@@ -1146,7 +1246,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_courts_agains_bandits"
-			# country_event = { days = 1 id = tibet.1 }
+			remove_idea = HNA_rise_of_crime
 		}
 	}
 	focus = {
@@ -1169,7 +1269,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_agrarian_reform_miao"
-			# country_event = { days = 1 id = tibet.1 }
+			add_ideas = HNA_biased_agrarian_reform
 		}
 	}
 	focus = {
@@ -1192,7 +1292,19 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_save_he_reforms"
-			# country_event = { days = 1 id = tibet.1 }
+			602 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = HNA_save_he_reforms 
+				bonus = 0.25
+				uses = 1
+				category = construction_tech
+			}
 		}
 	}
 	focus = {
@@ -1215,7 +1327,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_courts_againts_traitors"
-			# country_event = { days = 1 id = tibet.1 }
+			add_command_power = 50
 		}
 	}
 	focus = {
@@ -1239,7 +1351,19 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_title_nationality"
-			# country_event = { days = 1 id = tibet.1 }
+			add_ideas = HNA_miao_titular_nation
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.05
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.03
+			}
 		}
 	}
 }

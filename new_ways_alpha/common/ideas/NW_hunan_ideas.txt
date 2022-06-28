@@ -295,7 +295,7 @@ ideas = {
 			picture = taxes_on_monasteries
 			modifier = {
 				production_speed_buildings_factor = 0.05
-				#Rost Объём заводского производства +5 %,  TODO
+				industrial_capacity_factory = 0.05
 			}
 		}
 		HNA_rise_of_crime = {
@@ -310,7 +310,78 @@ ideas = {
 				stability_factor = -0.1
 				political_power_gain = -0.03 
 				production_speed_buildings_factor = -0.01
-				#Объём заводского производства -1 %,  TODO
+			}
+		}
+		HNA_provincial_tun = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = -0.25
+				political_power_gain = 0.25 
+				war_support_factor = -0.05
+			}
+		}
+		HNA_provincial_tun_2 = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = 0.25 
+				war_support_factor = -0.05
+			}
+		}
+		HNA_tensions_among_bureaucracy = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				political_advisor_cost_factor = -0.20
+			}
+		}
+		HNA_biased_agrarian_reform = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = -0.1
+				political_power_gain = -0.2
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = 0.05
+				line_change_production_efficiency_factor = 0.05
+			}
+		}
+		HNA_miao_titular_nation = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				conscription_factor = -0.15
+				stability_factor = -0.1
+				war_support_factor = 0.2
+				army_org_factor = -0.05
+				command_power_gain_mult = 0.2
 			}
 		}
 	}

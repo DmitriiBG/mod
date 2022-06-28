@@ -24,10 +24,8 @@ HNA_hunan_policy_category = {
 			check_variable = { HNA_hunan_militia < 4 }
 			#HNA_hunan_militia < 4
 			#has_war = yes
-			has_manpower > 4000
 			is_subject = no
 			controls_state = 602
-			has_full_control_of_state = 602
 		}
 
 		remove_effect = {
@@ -65,18 +63,7 @@ HNA_hunan_policy_category = {
 #	}
 #}
 		complete_effect = {
-			set_technology = { infantry_weapons = 1 }
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 1500
-			}
 			add_to_variable = { HNA_hunan_militia = +1 }
-			hidden_effect = {
-				set_technology = { 
-					infantry = 1
-					HNA_militia_infantry = 1 popup = no
-				 }
-			}
 			division_template = {
 				name = "Hunan Militia"
 				division_names_group = HNA_INF_01
@@ -107,6 +94,7 @@ HNA_hunan_mission_category = {
 		custom_cost_trigger = {
 			command_power > 25
 		}
+		custom_cost_text = custom_cost_hunan25
 
 		complete_effect = {
 			add_popularity = {
@@ -139,6 +127,7 @@ HNA_hunan_mission_category = {
 		custom_cost_trigger = {
 			command_power > 5
 		}
+		custom_cost_text = custom_cost_hunan5
 		complete_effect = {
 			add_popularity = {
 				ideology = fascism
@@ -295,6 +284,7 @@ HNA_rebellion_xiangxi = {
 		custom_cost_trigger = {
 			command_power > 5
 		}
+		custom_cost_text = custom_cost_hunan5
 		complete_effect = {
 			#TODO
 		}

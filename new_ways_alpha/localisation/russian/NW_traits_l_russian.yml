@@ -511,3 +511,8 @@
     BPL_antisemite:0 "Юдофоб"
     
     generate_wargoal_tension_against_fake_text:0 "Необходимый уровень напряженности для оправдания войны"
+
+
+    ### HNA Hunan
+    king_of_xiangxi:0 "Король Сянси"
+    king_miao:0 "Король Мяо"

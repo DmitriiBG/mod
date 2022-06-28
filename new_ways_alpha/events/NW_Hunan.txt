@@ -544,7 +544,28 @@ country_event = {
 	
 	option = {
 		name = HNA.29.a
-		
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05
+		}
+		add_political_power = 25
+		add_stability = 0.02
+	}
+	option = {
+		name = HNA.29.b
+		add_political_power = -100
+		add_stability = -0.02
+	}
+	option = {
+		name = HNA.29.c
+		add_popularity = {
+			ideology = communism
+			popularity = -0.01
+		}
 	}
 }
 
@@ -598,7 +619,14 @@ country_event = {
 	
 	option = {
 		name = HNA.32.a
-		
+		if = {
+			limit = {
+				 SHX = {
+					is_faction_leader = yes
+				 }
+			}
+			HNA = { country_event = { id = HNA.33 } }
+		}
 	}
 }
 
@@ -616,7 +644,16 @@ country_event = {
 	
 	option = {
 		name = HNA.33.a
-		
+		SHX = {
+			set_autonomy = {
+				target = HNA
+				autonomous_state = autonomy_socprotect
+			}
+		}
+		SHX = { country_event = { id = HNA.36 } } #TODO Create new event for SHX
+	}
+	option = {
+		name = HNA.33.b
 	}
 }
 
@@ -634,6 +671,34 @@ country_event = {
 	
 	option = {
 		name = HNA.34.a
+		add_stability = 0.01
+	}
+}
+
+country_event = {
+	id = HNA.35
+	title = HNA.35.t
+	desc = HNA.35.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.35"
+	}
+	
+	option = {
+		name = HNA.35.a
+		if = {
+			limit = { has_country_leader = { name = "He Jian" } }
+			kill_country_leader = yes
+		}
 		
+		HNA = { 
+		    set_politics = {
+		    	ruling_party = neutrality
+			    elections_allowed = no
+			}
+		}
 	}
 }

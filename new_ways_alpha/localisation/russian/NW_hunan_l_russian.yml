@@ -39,6 +39,8 @@
  HNA_reformed_police_2:0 "Реформированная милиция"
  HNA_uprising_xiangxi:0 "Восстание мяо"
  HNA_uprising_xiangxi_desc:0 "Восстание мяо"
+ HNA_economy_growth:0 "Экономический рост"
+ HNA_economy_growth_desc:0 "Экономический рост"
  
  ## Events
  HNA.1.t:0 "Родина федерализма"
