@@ -3,7 +3,7 @@ HNA_hunan_policy_category = {
 	HNA_hunan_policy = {
 		icon = GFX_decision_generic_arrest
 		#cost = 100
-		cost = 1
+		cost = 5
 		fire_only_once = no
 		#days_remove = 30
 		days_remove = 5
@@ -11,8 +11,6 @@ HNA_hunan_policy_category = {
 
 
 		allowed = {
-			check_variable = { HNA_hunan_militia < 4 }
-			#HNA_hunan_militia < 4
 			original_tag = HNA
 		}
 
@@ -21,64 +19,45 @@ HNA_hunan_policy_category = {
 		}
 
 		available = {
-			check_variable = { HNA_hunan_militia < 4 }
-			#HNA_hunan_militia < 4
-			#has_war = yes
+			has_war = yes
 			is_subject = no
 			controls_state = 602
+			has_manpower > 4000
 		}
 
 		remove_effect = {
-			add_to_variable = { HNA_hunan_militia = +1 }
+			add_manpower = -4000
+			set_temp_variable = { hunan_batalion = 1 }
+			add_to_variable = { HNA_hunan_militia_battalions = hunan_batalion }
 			capital_scope = {
 				create_unit = {
-					division = "division_template = \"Hunan Militia\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+					division = "division_template = \"Hunan Militia\" start_experience_factor = 0.4"
 					owner = ROOT
 					count = 1
 				}
 			}
 		}
 
-#		custom_cost_trigger = {
-#	set_temp_variable = { custom_cost_pp = 25 }
-#	set_temp_variable = { custom_cost = 5 }
-#	check_variable = { anarchism_unity_var > custom_cost }
-#	has_political_power > custom_cost_pp
-#}
-#custom_cost_text = custom_cost_anarcho_unity_and_pp
-#
-#complete_effect = {
-#	log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision generic_call_for_isolationism"
-#	set_country_flag = { flag = generic_call_for_isolationism_flag days = 30 value = 1 }
-#	set_temp_variable = { anarchism_tendency_need_trade_user_pool_temp = -10 }
-#	add_to_variable = { anarchism_tendency_need_trade_user_pool_var = anarchism_tendency_need_trade_user_pool_temp }
-#	custom_effect_tooltip = anarchism_tendency_need_trade_user_pool_tt
-#	set_temp_variable = { anarchism_unity_add_var = -5 }
-#	add_to_variable = { anarchism_unity_var = anarchism_unity_add_var }
-#	custom_effect_tooltip = anarchism_unity_add_effect
-#	hidden_effect = {
-#		set_var_generic_anarchism_tendency = yes
-#		set_temp_variable = { custom_cost_pp_zero = -25 }
-#		add_political_power = custom_cost_pp_zero
-#	}
-#}
 		complete_effect = {
-			add_to_variable = { HNA_hunan_militia = +1 }
-			division_template = {
-				name = "Hunan Militia"
-				division_names_group = HNA_INF_01
-				is_locked = yes
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 1 y = 0 }
-				}
-				support = {
-					artillery = { x = 0 y = 0 }
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_template = "Hunan Militia" } }
+					division_template = {
+						name = "Hunan Militia"
+						division_names_group = HNA_MIL_01
+						is_locked = yes
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+						}
+						support = {
+							artillery = { x = 0 y = 0 }
+						}
+					}
 				}
 			}
-
 		}
 	}
 }
@@ -92,9 +71,12 @@ HNA_hunan_mission_category = {
 		priority = 21
 
 		custom_cost_trigger = {
-			command_power > 25
+			set_temp_variable = { custom_cost_pp = 100 }
+			set_temp_variable = { command_power_temp_cost = 25 }
+			has_political_power > custom_cost_pp
+			command_power > command_power_temp_cost
 		}
-		custom_cost_text = custom_cost_hunan25
+		custom_cost_text = pol_and_comnand_power_cost
 
 		complete_effect = {
 			add_popularity = {
@@ -105,7 +87,6 @@ HNA_hunan_mission_category = {
 		}
 
 		allowed = {
-			command_power > 25
 			original_tag = HNA
 		}
 
@@ -124,10 +105,15 @@ HNA_hunan_mission_category = {
 		fire_only_once = no
 		priority = 21
 		days_remove = 120
+
 		custom_cost_trigger = {
-			command_power > 5
+			set_temp_variable = { custom_cost_pp = 25 }
+			set_temp_variable = { command_power_temp_cost = 5 }
+			has_political_power > custom_cost_pp
+			command_power > command_power_temp_cost
 		}
-		custom_cost_text = custom_cost_hunan5
+		custom_cost_text = pol_and_comnand_power_cost
+
 		complete_effect = {
 			add_popularity = {
 				ideology = fascism
@@ -137,7 +123,6 @@ HNA_hunan_mission_category = {
 		}
 
 		allowed = {
-			command_power > 5
 			original_tag = HNA
 		}
 
@@ -203,7 +188,8 @@ HNA_hunan_mission_category = {
 
 	HNA_hunan_join_government = {
 		icon = GFX_decision_generic_arrest
-		cost = 50
+		#cost = 50
+		cost = 5
 		fire_only_once = yes
 		priority = 21
 
@@ -215,28 +201,60 @@ HNA_hunan_mission_category = {
 			original_tag = HNA
 		}
 
-		MAN = { is_subject_of = ROOT }
-
+		#TODO MAN = { is_subject_of = ROOT }
 
 		complete_effect = {
 			if = {
-				limit = { SIH = { fascism > 0.64 } }
-				HNA = { is_subject_of = SIH }
+				limit = { 
+					fascism > 0.64
+					#HNA = { fascism > 0.64 }
+					is_subject = yes
+				}
+				OWNER = {
+					country_event = { id = HNA.4 }
+				}
+				is_subject_of = SIH
+				#HNA = { is_subject_of = SIH }
+			}
+			else_if = {
+				limit = { 
+					fascism > 0.64
+					#HNA = { fascism > 0.64 }
+				}
+				is_subject_of = SIH
+				#HNA = { is_subject_of = SIH }
+			}
+			else_if = {
+				limit = { 
+					HNA = { fascism > 0.3 }
+					#HNA = { fascism > 0.3 }
+					has_decision = HNA_hunan_government_support
+					has_decision = HNA_hunan_army_support
+					is_subject = yes
+				}
+				OWNER = {
+					country_event = { id = HNA.4 }
+				}
+				is_subject_of = SIH
+				#HNA = { is_subject_of = SIH }
+			}
+			else_if = {
+				limit = { 
+					HNA = { fascism > 0.3 }
+					#HNA = { fascism > 0.3 }
+					has_decision = HNA_hunan_government_support
+					has_decision = HNA_hunan_army_support
+				}
+				is_subject_of = SIH
+				#HNA = { is_subject_of = SIH }
+				country_event = { id = HNA.5 }
 			}
 			else_if = {
 				limit = { is_subject = yes }
 				country_event = { id = HNA.6 }
 			}
-			else_if = {
-				limit = { 
-					SIH = { fascism > 0.3 }
-					has_decision = HNA_hunan_government_support
-					has_decision = HNA_hunan_army_support
-				}
-				HNA = { is_subject_of = SIH }
-				country_event = { id = HNA.5 }
-			}
 			else = {
+				#country_event = { id = HNA.5 }
 				country_event = { id = HNA.35 }
 			}
 		}
@@ -248,7 +266,7 @@ HNA_hunan_mission_category = {
 	}
 }
 
-HNA_rebellion_xiangxi = {
+HNA_rebellion_xiangxi_category = {
 
 	HNA_intensification_of_rebellion = {
 		icon = GFX_decision_generic_arrest
@@ -281,10 +299,15 @@ HNA_rebellion_xiangxi = {
 		fire_only_once = no
 		priority = 21
 		days_remove = 90
+
 		custom_cost_trigger = {
-			command_power > 5
+			set_temp_variable = { custom_cost_pp = 25 }
+			set_temp_variable = { command_power_temp_cost = 5 }
+			has_political_power > custom_cost_pp
+			command_power > command_power_temp_cost
 		}
-		custom_cost_text = custom_cost_hunan5
+		custom_cost_text = pol_and_comnand_power_cost
+
 		complete_effect = {
 			#TODO
 		}
@@ -345,53 +368,6 @@ HNA_rebellion_xiangxi = {
 
 		available = {
 			is_subject = no
-		}
-	}
-
-
-	HNA_hunan_join_government = {
-		icon = GFX_decision_generic_arrest
-		cost = 50
-		fire_only_once = yes
-		priority = 21
-
-		allowed = {
-			original_tag = HNA
-		}
-
-		visible = {
-			original_tag = HNA
-		}
-
-		MAN = { is_subject_of = ROOT }
-
-
-		complete_effect = {
-			if = {
-				limit = { SIH = { fascism > 0.64 } }
-				HNA = { is_subject_of = SIH }
-			}
-			else_if = {
-				limit = { is_subject = yes }
-				country_event = { id = HNA.6 }
-			}
-			else_if = {
-				limit = { 
-					SIH = { fascism > 0.3 }
-					has_decision = HNA_hunan_government_support
-					has_decision = HNA_hunan_army_support
-				}
-				HNA = { is_subject_of = SIH }
-				country_event = { id = HNA.5 }
-			}
-			else = {
-				country_event = { id = HNA.35 }
-			}
-		}
-
-		available = {
-			country_exists = SIH
-			SIH = { is_subject = no }
 		}
 	}
 }

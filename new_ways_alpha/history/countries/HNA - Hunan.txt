@@ -1,15 +1,19 @@
 ﻿#capital = 611
 
+oob = "HNA_1936"
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "HNA_1936_naval_mtg"
+	else = {
+		set_naval_oob = "HNA_1936_naval_legacy"
+	}
+}
+
 set_technology = {
 	#doctrines
 	armed_people = 1
 	infantry_weapons = 1
 	HNA_militia_infantry = 1 popup = no
-}
-
-add_equipment_to_stockpile = {
-	type = infantry_equipment
-	amount = 1500
 }
 
 set_popularities = {
@@ -29,6 +33,17 @@ set_politics = {
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
+}
+
+create_country_leader = {
+	name = "Long Yunfei"
+	desc = "POLITICS_LONG_YUNFEI_DESC"
+	picture = "gfx/leaders/HNA/Portrait_Long_Yunfei.dds"
+	expire = "1965.1.1"
+	ideology = despotism
+	traits = {
+		king_miao
+	}
 }
 
 create_country_leader = {
@@ -62,16 +77,7 @@ create_country_leader = {
 	}
 }
 
-create_country_leader = {
-	name = "Long Yunfei"
-	desc = "POLITICS_LONG_YUNFEI_DESC"
-	picture = "gfx/leaders/HNA/Portrait_Long_Yunfei.dds"
-	expire = "1965.1.1"
-	ideology = stalinism
-	traits = {
-		king_miao
-	}
-}
+
 
 recruit_character = HNA_he_jian
 

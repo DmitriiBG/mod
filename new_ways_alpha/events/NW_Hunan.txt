@@ -53,12 +53,12 @@ country_event = {
 	
 	immediate = {
 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.3"
-		set_variable = { HNA_hunan_mission_trigger = 1 }
 		unlock_decision_category_tooltip = HNA_hunan_mission_category
 	}
 	
 	option = {
 		name = HNA.3.a
+		add_to_variable = { var = HNA_hunan_mission_trigger value = 1 }
 	}
 }
 
@@ -98,11 +98,53 @@ country_event = {
 	
 	option = {
 		name = HNA.5.a
-		start_civil_war = { ideology = neutrality size = 0.5 }
+		HNA = {
+			set_country_flag = same_ideology_civil_war_flag
+		}
+
+		start_civil_war = {
+			ideology = neutrality
+			size = 0.4
+			capital = 7101
+			states = {
+				750
+			}
+			#10006 7279 7101 7434 
+		}
+		hidden_effect = {
+			change_tag_from = ROOT
+			HNA = {
+				load_focus_tree = { tree = nw_hunan_focus keep_completed = no }
+				add_timed_idea = { idea = focus_synchronization days = 7 }
+				set_cosmetic_tag = HNA_Long_xiangxi
+			}
+		}
+
 	}
 	option = {
 		name = HNA.5.b
-		start_civil_war = { ideology = neutrality size = 0.5 }
+		HNA = {
+			set_country_flag = same_ideology_civil_war_flag
+		}
+		start_civil_war = {
+			ideology = neutrality
+			size = 0.4
+			capital = 7101
+			states = {
+				750
+			}
+			hidden_effect = {
+				change_tag_from = ROOT
+				D03 = {
+					set_cosmetic_tag = HNA_Long_xiangxi
+				}
+				D03 = {
+					load_focus_tree = { tree = nw_hunan_focus keep_completed = no }
+					add_timed_idea = { idea = focus_synchronization days = 7 }
+				}
+			}
+			#10335 7665 10517 13140 9999 7097 12483 12310 12017 4480 12053 10377 7502 13143 1640 12350 7159 4125 12738 11918 9982 14448  
+		}
 	}
 }
 
@@ -120,7 +162,11 @@ country_event = {
 	
 	option = {
 		name = HNA.6.a
-		
+		kill_country_leader = yes
+		OWNER = {
+			annex_country = { target = HNA }
+			country_event = { id = HNA.7 }
+		}
 	}
 }
 
@@ -263,12 +309,15 @@ country_event = {
 	
 	immediate = {
 		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.14"
+		unlock_decision_category_tooltip = HNA_rebellion_xiangxi_category
 	}
 	
 	option = {
 		name = HNA.14.a
 		add_ideas = HNA_uprising_xiangxi
-		## open decisions
+		add_to_variable = { var = HNA_rebellion_xiangxi_trigger value = 1 }
+	}
+
 	}
 }
 
@@ -692,6 +741,9 @@ country_event = {
 		if = {
 			limit = { has_country_leader = { name = "He Jian" } }
 			kill_country_leader = yes
+			#hidden_effect = {
+			#	BMD = {
+			#		retire_country_leader = yes
 		}
 		
 		HNA = { 
