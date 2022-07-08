@@ -1,0 +1,213 @@
+HNA_INF_01 = 
+{
+	name = "Infantry Division"
+
+	for_countries = { HNA } 
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	link_numbering_with = { HNA_INF_01 }
+
+	fallback_name = "%dth Infantry Division"
+
+	ordered =
+	{
+		1 = { "%dst Infantry Division" }
+		2 = { "%dnd Infantry Division" }
+		3 = { "%drd Infantry Division" }
+		4 = { "%dth Infantry Division" }
+		5 = { "%dth Infantry Division" }
+		6 = { "%dth Infantry Division" }
+		7 = { "%dth Infantry Division" }
+		8 = { "%dth Infantry Division" }
+		9 = { "%dth Infantry Division" }
+		10 = { "%dth Infantry Division" }
+		11 = { "%dth Infantry Division" }
+		12 = { "%dth Infantry Division" }
+		13 = { "%dth Infantry Division" }
+		14 = { "%dth Infantry Division" }
+		15 = { "%dth Infantry Division" }
+		16 = { "%dth Infantry Division" }
+		17 = { "%dst Infantry Division" }
+		18 = { "%dnd Infantry Division" }
+		19 = { "%drd Infantry Division" }
+		20 = { "%dth Infantry Division" }
+		21 = { "%dst Infantry Division" }
+		22 = { "%dnd Infantry Division" }
+		23 = { "%drd Infantry Division" }
+		24 = { "%drd Infantry Division" }
+		25 = { "%drd Infantry Division" }
+		32 = { "%drd Infantry Division" }
+		33 = { "%drd Infantry Division" }
+		34 = { "%drd Infantry Division" }
+		35 = { "%drd Infantry Division" }
+		36 = { "%drd Infantry Division" }
+		37 = { "%drd Infantry Division" }
+		38 = { "%drd Infantry Division" }
+		39 = { "%drd Infantry Division" }
+		40 = { "%drd Infantry Division" }
+		41 = { "%drd Infantry Division" }
+		28 = { "%drd Infantry Division" }
+		51 = { "%drd Infantry Division" }
+		52 = { "%drd Infantry Division" }
+		54 = { "%drd Infantry Division" }
+		55 = { "%drd Infantry Division" }
+		56 = { "%drd Infantry Division" }
+		57 = { "%drd Infantry Division" }
+	#	45 = { "%drd Infantry Division" }
+		48 = { "%drd Infantry Division" }
+		29 = { "%drd Infantry Division" }
+		53 = { "%drd Infantry Division" }
+		58 = { "%drd Infantry Division" }
+		59 = { "%drd Infantry Division" }
+		60 = { "%drd Infantry Division" }
+		68 = { "%drd Infantry Division" }
+		69 = { "%drd Infantry Division" }
+		70 = { "%drd Infantry Division" }
+		71 = { "%drd Infantry Division" }
+		61 = { "%drd Infantry Division" }
+		62 = { "%drd Infantry Division" }
+		63 = { "%drd Infantry Division" }
+		64 = { "%drd Infantry Division" }
+		65 = { "%drd Infantry Division" }
+		31 = { "%drd Infantry Division" }
+		30 = { "%drd Infantry Division" }
+		46 = { "%drd Infantry Division" }
+		47 = { "%drd Infantry Division" }
+		42 = { "%drd Infantry Division" }
+		43 = { "%drd Infantry Division" }
+		49 = { "%drd Infantry Division" }
+		77 = { "%drd Infantry Division" }
+		44 = { "%drd Infantry Division" }
+		72 = { "%drd Infantry Division" }
+		81 = { "%drd Infantry Division" }
+		86 = { "%drd Infantry Division" }
+		50 = { "%drd Infantry Division" }
+		107 = { "%drd Infantry Division" }
+	#	109 = { "%drd Infantry Division" }
+		100 = { "%drd Infantry Division" }
+		102 = { "%drd Infantry Division" }
+		103 = { "%drd Infantry Division" }
+		105 = { "%drd Infantry Division" }
+		73 = { "%drd Infantry Division" }
+		84 = { "%drd Infantry Division" }
+		93 = { "%drd Infantry Division" }
+		66 = { "%drd Infantry Division" }
+		115 = { "%drd Infantry Division" }
+		117 = { "%drd Infantry Division" }
+		118 = { "%drd Infantry Division" }
+	#	108 = { "%drd Infantry Division" }
+		111 = { "%drd Infantry Division" }
+		112 = { "%drd Infantry Division" }
+		119 = { "%drd Infantry Division" }
+		94 = { "%drd Infantry Division" }
+		120 = { "%drd Infantry Division" }
+		121 = { "%drd Infantry Division" }
+		122 = { "%drd Infantry Division" }
+		123 = { "%drd Infantry Division" }
+		124 = { "%drd Infantry Division" }
+		125 = { "%drd Infantry Division" }
+		127 = { "%drd Infantry Division" }
+		128 = { "%drd Infantry Division" }
+		131 = { "%drd Infantry Division" }
+		132 = { "%drd Infantry Division" }
+		133 = { "%drd Infantry Division" }
+		79 = { "%drd Infantry Division" }
+		96 = { "%drd Infantry Division" }
+		88 = { "%drd Infantry Division" }
+		89 = { "%drd Infantry Division" }
+		140 = { "%drd Infantry Division" }
+		142 = { "%drd Infantry Division" }
+		143 = { "%drd Infantry Division" }
+		144 = { "%drd Infantry Division" }
+		145 = { "%drd Infantry Division" }
+		146 = { "%drd Infantry Division" }
+		147 = { "%drd Infantry Division" }
+		150 = { "%drd Infantry Division" }
+		151 = { "%drd Infantry Division" }
+		152 = { "%drd Infantry Division" }
+		153 = { "%drd Infantry Division" }
+		154 = { "%drd Infantry Division" }
+		155 = { "%drd Infantry Division" }
+		156 = { "%drd Infantry Division" }
+		157 = { "%drd Infantry Division" }
+		160 = { "%drd Infantry Division" }
+		201 = { "%drd Infantry Division" }
+		202 = { "%drd Infantry Division" }
+		205 = { "%drd Infantry Division" }
+		206 = { "%drd Infantry Division" }
+		209 = { "%drd Infantry Division" }
+		212 = { "%drd Infantry Division" }
+		214 = { "%drd Infantry Division" }
+		216 = { "%drd Infantry Division" }
+		91 = { "%drd Infantry Division" }
+		129 = { "%drd Infantry Division" }
+		130 = { "%drd Infantry Division" }
+		161 = { "%drd Infantry Division" }
+		221 = { "%drd Infantry Division" }
+		222 = { "%drd Infantry Division" }
+		224 = { "%drd Infantry Division" }
+		225 = { "%drd Infantry Division" }
+		229 = { "%drd Infantry Division" }
+		230 = { "%drd Infantry Division" }
+		231 = { "%drd Infantry Division" }
+		234 = { "%drd Infantry Division" }
+		303 = { "%drd Infantry Division" }
+		308 = { "%drd Infantry Division" }
+		312 = { "%drd Infantry Division" }
+		316 = { "%drd Infantry Division" }
+		320 = { "%drd Infantry Division" }
+		321 = { "%drd Infantry Division" }
+		322 = { "%drd Infantry Division" }
+		344 = { "%drd Infantry Division" }
+		351 = { "%drd Infantry Division" }
+		354 = { "%drd Infantry Division" }
+		355 = { "%drd Infantry Division" }
+		134 = { "%drd Infantry Division" }
+		135 = { "%drd Infantry Division" }
+		136 = { "%drd Infantry Division" }
+		137 = { "%drd Infantry Division" }
+		138 = { "%drd Infantry Division" }
+		139 = { "%drd Infantry Division" }
+		148 = { "%drd Infantry Division" }
+		149 = { "%drd Infantry Division" }
+		158 = { "%drd Infantry Division" }
+	}
+}
+HNA_MIL_01 = 
+{
+	name = "Militia Battalion"
+
+	for_countries = { HNA }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	link_numbering_with = { HNA_MIL_01 }
+
+	fallback_name = "%d Hunan Militia"
+
+	ordered =
+	{
+		1 = { "%d Hunan Militia" }
+		2 = { "%d Hunan Militia" }
+		3 = { "%d Hunan Militia" }
+		4 = { "%d Hunan Militia" }
+		5 = { "%d Hunan Militia" }
+		6 = { "%d Hunan Militia" }
+		7 = { "%d Hunan Militia" }
+		8 = { "%d Hunan Militia" }
+		9 = { "%d Hunan Militia" }
+		10 = { "%d Hunan Militia" }
+		11 = { "%d Hunan Militia" }
+		12 = { "%d Hunan Militia" }
+		13 = { "%d Hunan Militia" }
+		14 = { "%d Hunan Militia" }
+		15 = { "%d Hunan Militia" }
+		16 = { "%d Hunan Militia" }
+
+	}
+}

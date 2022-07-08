@@ -1145,7 +1145,28 @@
  strongest_claimant_ITA:0 "Самый сильный претендент"
  invited_to_split_yugo:0 "Приглашен на раздел Югославии"
  
+ ## HNA
+ HNA_hunan_policy_category:0 "Хунаньская милиция"
+ HNA_hunan_policy_category_desc:0 "Одной из заслуг Хе Цзяна за время своего руководства провинцией стала масштабная реформа местного народного ополчения, начавшаяся с приходом его на пост губернатора и проводившаяся в несколько этапов. Хе выдвинул концепцию «вооружённого народа», вывел милицию из-под контроля старых местных элит, централизовал всё руководство в своих руках, после чего начал борьбу с коррупцией, а также улучшил идеологическую и армейскую подготовку членов милиции"
+ HNA_hunan_policy:0 "Мобилизовать ополчение"
+
+ HNA_hunan_mission_category:0 "Миссионерская деятельность Игуаньдао в Хунане»"
+ HNA_hunan_mission_category_desc:0 "Хе Цзян может поддержать своих единоверцев в провинции Сычуань, но для этого ему нужно подготовить собственное населения и элиты к этому шагу"
+ HNA_hunan_army_support:0 "Найти поддержку среди военных"
+ HNA_hunan_army_ideology:0 "Включить идеи учения в идеологическую подготовку милиции"
+ HNA_hunan_government_support:0 "Найти поддержку в правительстве провинции"
+ HNA_hunan_missioners:0 "Поддерживать миссионеров Игуаньдао"
+ HNA_hunan_join_government:0 "Присоединиться к правительству Игуаньдао"
+ 
+ HNA_rebellion_xiangxi_category:0 "Восстание в Сянси"
+ HNA_rebellion_xiangxi_category_desc:0 "В западной части провинции разгорелось восстание народа мяо, которые требуют ликвидировать систему тунтянь. Если нам не удастся достаточно быстро подавить это выступление, то оно подорвёт репутацию Хе Цзяна, что может поставить его под удар как правительства республики, так и сил внутри провинции"
+ HNA_intensification_of_rebellion:0 "Усиление восстания"
+ HNA_insurrection:0 "Восстание"
+ HNA_interrogate_chen_quzhen:0 "Устроить допрос Чэня Цюйчжэня"
+ HNA_cancel_tongtian_system:0 "Отменить систему тунтянь"
+ HNA_start_suppression:0 "Начать подавление"
+ HNA_suppression_the_rebels:0 "Подавление восставших"
+
  #DEBUG
  debug_decisions_desc:0 "§GТИПА ОТЛАДКА:§!\n\n§TЧИСЛО ДИВИЗИЙ В МИРЕ:§!  §O[?global.total_division]§!\n§TТЕКУЩИЙ ЛИМИТ:§!  §R[?global.total_division_limit]§!\n\n§HЧисло стейтов: [?ROOT.num_owned_states]\nОбщее число заводов: [?ROOT.num_of_factories]\nЧисло заводов во владении: [?ROOT.num_of_civilian_factories]\nЧисло научных слотов: [?ROOT.amount_research_slots]\nМодификатор исследований: [?ROOT.modifier@research_speed_factor]\nСтаба: [?ROOT.stability]\nПопулярность партии: [?ROOT.party_popularity@ruling_party]§!\n\nФабрики всего: [?ROOT.num_of_civilian_factories]\nДоступные фабрики: [?ROOT.num_of_civilian_factories_available_for_projects]\nТНП: [?ROOT.modifier@consumer_goods_factor]\nЧисло дивизий: [?ROOT.num_divisions]\nЧисло батальонов: [?ROOT.num_battalions]\n\nНекорки: [?ROOT.modifier@non_core_manpower|%]\n"
- 
  

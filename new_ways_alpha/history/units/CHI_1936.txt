@@ -495,7 +495,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 199
 		}
-		location = 9999
+		location = 7085
 		division_template = "Tiaozheng Shi"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.4
@@ -506,7 +506,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 198
 		}
-		location = 1640
+		location = 1029
 		division_template = "Tiaozheng Shi"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.4
@@ -584,7 +584,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 8
 		}
-		location = 7097
+		location = 3992
 		division_template = "Tiaozheng Shi"
 		start_equipment_factor = 0.3
 		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
@@ -594,7 +594,17 @@ units = {
 			is_name_ordered = yes
 			name_order = 15
 		}
-		location = 13143
+		location = 9958
+		division_template = "Tiaozheng Shi"
+		start_equipment_factor = 0.3
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 15
+		}
+		location = 9958
 		division_template = "Tiaozheng Shi"
 		start_equipment_factor = 0.3
 		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
@@ -604,7 +614,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 16
 		}
-		location = 12483
+		location = 4547
 		division_template = "Tiaozheng Shi"
 		start_equipment_factor = 0.3
 		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
@@ -614,7 +624,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 19
 		}
-		location = 7502
+		location = 4183
 		division_template = "Tiaozheng Shi"
 		start_equipment_factor = 0.3
 		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
@@ -624,7 +634,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 32
 		}
-		location = 7097
+		location = 3992
 		division_template = "Tiaozheng Shi"
 		start_equipment_factor = 0.3
 		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
@@ -634,7 +644,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 34
 		}
-		location = 7159
+		location = 11913
 		division_template = "Tiaozheng Shi"
 		start_equipment_factor = 0.3
 		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
@@ -644,7 +654,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 45
 		}
-		location = 7159
+		location = 11913
 		division_template = "Tiaozheng Shi"
 		start_equipment_factor = 0.3
 		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
@@ -676,7 +686,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 27
 		}
-		location = 10335
+		location = 7191
 		division_template = "Tiaozheng Shi"
 		start_equipment_factor = 0.3
 		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }

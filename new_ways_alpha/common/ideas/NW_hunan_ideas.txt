@@ -1,0 +1,388 @@
+ideas = {
+
+    country = {
+		HNA_high_local_police = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = equal_taxes_on_monasteries
+			modifier = {
+				conscription_factor = +1
+				army_org_factor = +0.1
+				war_support_factor = +0.1
+			}
+		}
+		HNA_reformed_police = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				conscription_factor = +1
+				army_org_factor = +0.1
+				war_support_factor = +0.1
+				mobilization_speed = +0.15
+				training_time_factor = -0.25
+			}
+		}
+		HNA_new_exemplary_police = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				conscription_factor = +1
+				army_org_factor = +0.1
+				war_support_factor = +0.1
+				mobilization_speed = +0.15
+				training_time_factor = -0.25
+			}
+		}
+		HNA_reformed_police_2 = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				conscription_factor = +1
+				army_org_factor = +0.1
+				war_support_factor = +0.1
+			}
+		}
+
+		HNA_reformed_police_3 = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				conscription_factor = +1
+				army_org_factor = +0.1
+			}
+		}
+
+		HNA_reformed_police_4 = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				army_org_factor = +0.1
+			}
+		}
+
+		HNA_reformed_police_5 = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				conscription_factor = +1
+			}
+		}
+
+		HNA_vertical_Chun_power = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = +0.1
+			}
+		}
+
+		HNA_vertical_Chun_power_2 = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = +0.1
+				command_power_gain_mult = 0.3
+			}
+		}
+	
+		HNA_vertical_Chun_power_3 = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = +0.1
+				political_power_gain = 0.25
+				political_advisor_cost_factor = -0.33
+			}
+		}
+	
+			
+		HNA_vertical_Chun_power_4 = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = +0.1
+				command_power_gain_mult = 0.3
+				political_power_gain = 0.25
+				political_advisor_cost_factor = -0.33
+			}
+		}
+
+		HNA_rise_tax = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = 0.1
+				production_speed_buildings_factor = 0.2
+			}
+		}
+
+		HNA_rise_tax_2 = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				political_power_gain = 0.1
+				production_speed_buildings_factor = 0.2
+			}
+		}
+
+		HNA_opium_mafia = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = -0.1
+				political_power_gain = 0.25
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		HNA_military_spending = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = -0.05
+				consumer_goods_factor = -0.03
+				experience_gain_army = 0.03
+			}
+			research_bonus = {
+				infantry_weapons = +0.05
+			}
+		}
+		XSM_idea_chinese_cliqe = {
+			removal_cost = -1
+			allowed = { always = no }
+			picture = chinese_cliqe
+			rule = {
+				can_join_factions = no
+			}
+			modifier = {
+				custom_modifier_tooltip = chinese_cliqe_tt
+			}
+			on_remove = {
+				every_other_country = {
+					remove_opinion_modifier = {
+						target = ROOT
+						modifier = XSM_cliqe_opinion
+					}
+				}
+			}
+			on_add = { set_country_flag = block_global_market }
+			on_remove = { clr_country_flag = block_global_market }
+		}
+		HNA_increase_social_spending = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = 0.1
+				consumer_goods_factor = 0.05
+				production_speed_hospital_factor = 0.03
+			}
+		}
+		HNA_increase_social_spending_2 = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = 0.1
+				consumer_goods_factor = 0.05
+				production_speed_hospital_factor = 0.03
+				research_speed_factor = -0.02
+			}
+		}
+		HNA_uprising_xiangxi = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = -0.2
+				political_power_gain = -0.2 
+			}
+		}
+		HNA_economy_growth = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		HNA_rise_of_crime = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = -0.1
+				political_power_gain = -0.03 
+				production_speed_buildings_factor = -0.01
+			}
+		}
+		HNA_provincial_tun = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = -0.25
+				political_power_gain = 0.25 
+				war_support_factor = -0.05
+			}
+		}
+		HNA_provincial_tun_2 = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = 0.25 
+				war_support_factor = -0.05
+			}
+		}
+		HNA_tensions_among_bureaucracy = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				political_advisor_cost_factor = -0.20
+			}
+		}
+		HNA_biased_agrarian_reform = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				stability_factor = -0.1
+				political_power_gain = -0.2
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = 0.05
+				line_change_production_efficiency_factor = 0.05
+			}
+		}
+		HNA_miao_titular_nation = {
+			allowed = { always = no }
+			available = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = taxes_on_monasteries
+			modifier = {
+				conscription_factor = -0.15
+				stability_factor = -0.1
+				war_support_factor = 0.2
+				army_org_factor = -0.05
+				command_power_gain_mult = 0.2
+			}
+		}
+	}
+}

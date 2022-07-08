@@ -906,6 +906,15 @@ on_actions = {
 					country_event = { id = NWpersian.153 days = 60 random_days = 10 }
 				}
 			}
+			### HNA start events
+			if = {
+				limit = {
+					has_start_date < 1936.01.03
+				}
+				HNA = {
+					country_event = { id = HNA.1 days = 1 }
+				}
+			}
 			### Ирак стартпак
 			if = {
 				limit = {

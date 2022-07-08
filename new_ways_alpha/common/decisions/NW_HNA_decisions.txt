@@ -1,0 +1,483 @@
+HNA_hunan_policy_category = {
+	
+	HNA_hunan_policy = {
+		icon = GFX_decision_generic_arrest
+		#cost = 100
+		cost = 5
+		fire_only_once = no
+		#days_remove = 30
+		days_remove = 5
+		priority = 21
+
+
+		allowed = {
+			original_tag = HNA
+		}
+
+		visible = {
+			original_tag = HNA
+		}
+
+		available = {
+			has_war = yes
+			is_subject = no
+			controls_state = 602
+			has_manpower > 4000
+		}
+
+		remove_effect = {
+			add_manpower = -4000
+			set_temp_variable = { hunan_batalion = 1 }
+			add_to_variable = { HNA_hunan_militia_battalions = hunan_batalion }
+			capital_scope = {
+				create_unit = {
+					division = "division_template = \"Hunan Militia\" start_experience_factor = 0.4"
+					owner = ROOT
+					count = 1
+				}
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_template = "Hunan Militia" } }
+					division_template = {
+						name = "Hunan Militia"
+						division_names_group = HNA_MIL_01
+						is_locked = yes
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+						}
+						support = {
+							artillery = { x = 0 y = 0 }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+HNA_hunan_mission_category = {
+
+	HNA_hunan_army_support = {
+		icon = GFX_decision_generic_arrest
+		cost = 100
+		fire_only_once = yes
+		priority = 21
+
+		custom_cost_trigger = {
+			set_temp_variable = { custom_cost_pp = 100 }
+			set_temp_variable = { command_power_temp_cost = 25 }
+			has_political_power > custom_cost_pp
+			command_power > command_power_temp_cost
+		}
+		custom_cost_text = pol_and_comnand_power_cost
+
+		complete_effect = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.03
+			}
+			add_command_power = -25
+			set_temp_variable = { complete_decision = 1 }
+			add_to_variable = { HNA_hunan_army_support_decision = complete_decision }
+		}
+
+		allowed = {
+			original_tag = HNA
+		}
+
+		visible = {
+			original_tag = HNA
+		}
+
+		available = {
+			is_subject = no
+		}
+	}
+
+	HNA_hunan_army_ideology = {
+		icon = GFX_decision_generic_arrest
+		cost = 25
+		fire_only_once = no
+		priority = 21
+		days_remove = 120
+
+		custom_cost_trigger = {
+			set_temp_variable = { custom_cost_pp = 25 }
+			set_temp_variable = { command_power_temp_cost = 5 }
+			has_political_power > custom_cost_pp
+			command_power > command_power_temp_cost
+		}
+		custom_cost_text = pol_and_comnand_power_cost
+
+		complete_effect = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.015
+			}
+			add_command_power = -5
+		}
+
+		allowed = {
+			original_tag = HNA
+		}
+
+		visible = {
+			original_tag = HNA
+		}
+
+		available = {
+			is_subject = no
+		}
+	}
+
+	HNA_hunan_government_support = {
+		icon = GFX_decision_generic_arrest
+		cost = 200
+		fire_only_once = yes
+		priority = 21
+		complete_effect = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.03
+			}
+			add_stability = -0.05
+			set_temp_variable = { complete_decision = 1 }
+			add_to_variable = { HNA_hunan_government_support_decision = complete_decision }
+		}
+		allowed = {
+			original_tag = HNA
+		}
+
+		visible = {
+			original_tag = HNA
+		}
+
+		available = {
+			is_subject = no
+		}
+	}
+
+	HNA_hunan_missioners = {
+		icon = GFX_decision_generic_arrest
+		cost = 50
+		fire_only_once = no
+		priority = 21
+		days_remove = 120
+		complete_effect = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.015
+			}
+		}
+		allowed = {
+			original_tag = HNA
+		}
+
+		visible = {
+			original_tag = HNA
+		}
+
+		available = {
+			is_subject = no
+		}
+	}
+
+
+	HNA_hunan_join_government = {
+		icon = GFX_decision_generic_arrest
+		cost = 50
+		fire_only_once = yes
+		priority = 21
+
+		allowed = {
+			original_tag = HNA
+		}
+
+		visible = {
+			original_tag = HNA
+		}
+
+		complete_effect = {
+			if = {
+				limit = { 
+					fascism > 0.64
+					is_subject = yes
+				}
+				SIH = {
+					set_autonomy = {
+						target = HNA
+						autonomy_state = autonomy_dominion
+					}
+					country_event = { id = HNA.4 }
+				}
+			}
+			else_if = {
+				limit = { 
+					fascism > 0.64
+				}
+				SIH = {
+					set_autonomy = {
+						target = HNA
+						autonomy_state = autonomy_dominion
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					fascism > 0.3
+					check_variable = { 
+						var = HNA_hunan_government_support_decision 
+						value = 1 
+						compare = greater_than_or_equals 
+					}
+					check_variable = { 
+						var = HNA_hunan_army_support_decision 
+						value = 1 
+						compare = greater_than_or_equals 
+					}
+					is_subject = yes
+				}
+				SIH = {
+					set_autonomy = {
+						target = HNA
+						autonomy_state = autonomy_dominion
+					}
+					country_event = { id = HNA.4 }
+				}
+			}
+			else_if = {
+				limit = { 
+					fascism > 0.3
+					check_variable = { 
+						var = HNA_hunan_government_support_decision 
+						value = 1 
+						compare = greater_than_or_equals 
+					}
+					check_variable = { 
+						var = HNA_hunan_army_support_decision 
+						value = 1 
+						compare = greater_than_or_equals 
+					}
+				}
+				SIH = {
+					set_autonomy = {
+						target = HNA
+						autonomy_state = autonomy_dominion
+					}
+				}
+				country_event = { id = HNA.5 }
+			}
+			else_if = {
+				limit = { is_subject = yes }
+				country_event = { id = HNA.6 }
+			}
+			else = {
+				country_event = { id = HNA.35 }
+			}
+		}
+
+		available = {
+			country_exists = SIH
+			SIH = { is_subject = no }
+		}
+	}
+}
+
+HNA_rebellion_xiangxi_category = {
+
+	HNA_intensification_of_rebellion = {
+		icon = GFX_decision_generic_arrest
+		fire_only_once = yes
+		priority = 21
+		days_remove = 365
+
+		remove_effect = {
+			if = {
+				limit = { 
+					is_subject = yes
+				}
+				OWNER = {
+					country_event = { id = HNA.16 }
+				}
+			}
+			else_if = {
+				limit = { 
+					has_completed_focus = HNA_support_anti_jap_agenda
+				}
+				country_event = { id = HNA.22 }
+			}
+			else = {
+				country_event = { id = HNA.23 }
+			} 
+		}
+
+		allowed = {
+			original_tag = HNA
+		}
+
+		visible = {
+			original_tag = HNA
+		}
+
+		available = {
+			original_tag = HNA
+		}
+	}
+
+	HNA_insurrection = {
+		icon = GFX_decision_generic_arrest
+		cost = 25
+		fire_only_once = no
+		priority = 21
+		days_remove = 90
+
+		custom_cost_trigger = {
+			set_temp_variable = { custom_cost_pp = 25 }
+			set_temp_variable = { command_power_temp_cost = 5 }
+			has_political_power > custom_cost_pp
+			command_power > command_power_temp_cost
+		}
+		custom_cost_text = pol_and_comnand_power_cost
+
+		complete_effect = {
+			random_list = {
+				25 = { 
+					750 = {
+						limit = {
+							industrial_complex  > 1
+						}
+						damage_building = {
+							type = industrial_complex
+							damage = 2
+						}
+					}
+				} 
+				25 = { 
+					750 = {
+						limit = {
+							infrastructure  > 1
+						}
+						damage_building = {
+							type = infrastructure
+							damage = 2
+						}
+					}
+				} 
+				25 = {
+					750 = {
+						limit = {
+							arms_factory  > 1
+						}
+						damage_building = {
+							type = arms_factory
+							damage = 2
+						}
+					}
+				}
+				25 = { }
+			}
+		}
+
+		allowed = {
+			original_tag = HNA
+		}
+
+		visible = {
+			original_tag = HNA
+		}
+
+		available = {
+			original_tag = HNA
+		}
+	}
+
+	HNA_interrogate_chen_quzhen = {
+		icon = GFX_decision_generic_arrest
+		cost = 20
+		fire_only_once = yes
+		priority = 21
+		complete_effect = {
+			country_event = { id = HNA.20 }
+		}
+		allowed = {
+			original_tag = HNA
+		}
+
+		visible = {
+			original_tag = HNA
+		}
+
+		available = {
+			original_tag = HNA
+		}
+	}
+	HNA_cancel_tongtian_system = {
+		icon = GFX_decision_generic_arrest
+		cost = 150
+		fire_only_once = yes
+		priority = 21
+		days_remove = 30
+		complete_effect = {
+			country_event = { id = HNA.26 }
+		}
+		allowed = {
+			original_tag = HNA
+		}
+
+		visible = {
+			original_tag = HNA
+		}
+
+		available = {
+			original_tag = HNA
+		}
+	}
+	HNA_start_suppression = {
+		icon = GFX_decision_generic_arrest
+		cost = 20
+		fire_only_once = no
+		priority = 21
+		complete_effect = {
+			#TODO
+		}
+		allowed = {
+			original_tag = HNA
+		}
+
+		visible = {
+			original_tag = HNA
+		}
+
+		available = {
+			original_tag = HNA
+		}
+	}
+	HNA_suppression_the_rebels = {
+		icon = GFX_decision_generic_arrest
+		cost = 50
+		fire_only_once = no
+		priority = 21
+		days_remove = 120
+		complete_effect = {
+			#TODO
+		}
+		allowed = {
+			original_tag = HNA
+		}
+
+		visible = {
+			original_tag = HNA
+		}
+
+		available = {
+			is_subject = no
+		}
+	}
+}

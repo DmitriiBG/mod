@@ -1,14 +1,31 @@
 ﻿#capital = 611
 
+oob = "HNA_1936"
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "HNA_1936_naval_mtg"
+	else = {
+		set_naval_oob = "HNA_1936_naval_legacy"
+	}
+}
+
 set_technology = {
+	#doctrines
+	armed_people = 1
 	infantry_weapons = 1
-	gw_artillery = 1
+	HNA_militia_infantry = 1 popup = no
 }
 
 set_popularities = {
-	fascism = 0
-	neutrality = 100
-	communism = 0
+	fascism = 5
+	neutrality = 73
+	communism = 4
+	democratic = 17
+	neutrality = 0
+	monarchy = 0
+	trozkism = 1
+	anarchism = 0
+	technocracy = 0
 }
 
 set_politics = {
@@ -18,12 +35,12 @@ set_politics = {
 	elections_allowed = no
 }
 
-create_country_leader = {
-	name = "He Jian"
-	desc = "POLITICS_He_Jian_DESC"
-	picture = "gfx/leaders/HNA/Portrait_He_Jian.dds"
-	expire = "1965.1.1"
-	ideology = despotism
-	traits = {
-	}
+recruit_character = HNA_he_jian
+recruit_character = HNA_long_yunfei
+recruit_character = HNA_chen_quzhen
+
+add_ideas = {
+	HNA_military_spending
+	HNA_high_local_police
+	XSM_idea_chinese_cliqe
 }

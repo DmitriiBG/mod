@@ -1,0 +1,924 @@
+﻿add_namespace = HNA
+
+
+country_event = {
+	id = HNA.1
+	title = HNA.1.t
+	desc = HNA.1.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = HNA
+		date > 1936.1.01
+		has_start_date < 1936.01.04
+	}	
+
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.1"
+	}
+	
+	option = {
+		name = HNA.1.a
+		HNA = { country_event = { days = 3 id = HNA.2 } }
+	}
+}
+
+country_event = {
+	id = HNA.2
+	title = HNA.2.t
+	desc = HNA.2.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.2"
+	}
+	
+	option = {
+		name = HNA.2.a
+		HNA = { country_event = { days = 3 id = HNA.3 } }
+	}
+}
+
+country_event = {
+	id = HNA.3
+	title = HNA.3.t
+	desc = HNA.3.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.3"
+		unlock_decision_category_tooltip = HNA_hunan_mission_category
+	}
+	
+	option = {
+		name = HNA.3.a
+		add_to_variable = { var = HNA_hunan_mission_trigger value = 1 }
+	}
+}
+
+country_event = {
+	id = HNA.4
+	title = HNA.4.t
+	desc = HNA.4.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.4"
+	}
+	
+	option = {
+		name = HNA.4.a
+		start_civil_war = { ideology = neutrality size = 0.5 }
+		#
+	}
+	option = {
+		name = HNA.4.b
+	}
+}
+
+country_event = {
+	id = HNA.5
+	title = HNA.5.t
+	desc = HNA.5.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.5"
+	}
+	
+	option = {
+		name = HNA.5.a
+		HNA = {
+			set_country_flag = same_ideology_civil_war_flag
+		}
+
+		start_civil_war = {
+			ideology = neutrality
+			size = 0.4
+			capital = 7101
+			states = {
+				750
+			}
+		}
+		hidden_effect = {
+			change_tag_from = ROOT
+			HNA = {
+				load_focus_tree = { tree = nw_hunan_focus keep_completed = no }
+				set_cosmetic_tag = HNA_Long_xiangxi
+			}
+		}
+
+	}
+	option = {
+		name = HNA.5.b
+		HNA = {
+			set_country_flag = same_ideology_civil_war_flag
+		}
+		start_civil_war = {
+			ideology = neutrality
+			size = 0.4
+			capital = 7101
+			states = {
+				750
+			}
+			hidden_effect = {
+				change_tag_from = ROOT
+				D03 = {
+					set_cosmetic_tag = HNA_Long_xiangxi
+				}
+				D03 = {
+					load_focus_tree = { tree = nw_hunan_focus keep_completed = no }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = HNA.6
+	title = HNA.6.t
+	desc = HNA.6.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.6"
+	}
+	
+	option = {
+		name = HNA.6.a
+		kill_country_leader = yes
+		OWNER = {
+			annex_country = { target = HNA }
+			country_event = { id = HNA.7 }
+		}
+	}
+}
+
+country_event = {
+	id = HNA.7
+	title = HNA.7.t
+	desc = HNA.7.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.7"
+	}
+	
+	option = {
+		name = HNA.7.a
+		
+	}
+}
+
+country_event = {
+	id = HNA.8
+	title = HNA.8.t
+	desc = HNA.8.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.8"
+	}
+	
+	option = {
+		name = HNA.8.a
+		add_ideas = { HNA_rise_of_crime }
+	}
+}
+
+country_event = {
+	id = HNA.9
+	title = HNA.9.t
+	desc = HNA.9.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.9"
+	}
+	
+	option = {
+		name = HNA.9.a
+		
+	}
+}
+
+country_event = {
+	id = HNA.10
+	title = HNA.10.t
+	desc = HNA.10.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.10"
+	}
+	
+	option = {
+		name = HNA.10.a
+		add_political_power = 15
+		add_stability = -0.02
+	}
+	option = {
+		name = HNA.10.b
+	}
+}
+country_event = {
+	id = HNA.11
+	title = HNA.11.t
+	desc = HNA.11.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.11"
+	}
+	
+	option = {
+		name = HNA.11.a
+		
+	}
+}
+
+country_event = {
+	id = HNA.12
+	title = HNA.12.t
+	desc = HNA.12.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.12"
+	}
+	
+	option = {
+		name = HNA.12.a
+		
+	}
+}
+
+country_event = {
+	id = HNA.13
+	title = HNA.13.t
+	desc = HNA.13.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.13"
+	}
+	
+	option = {
+		name = HNA.13.a
+		HNA = { country_event = { days = 15 id = HNA.14 } }
+	}
+}
+
+country_event = {
+	id = HNA.14
+	title = HNA.14.t
+	desc = HNA.14.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.14"
+		unlock_decision_category_tooltip = HNA_rebellion_xiangxi_category
+	}
+	
+	option = {
+		name = HNA.14.a
+		add_ideas = HNA_uprising_xiangxi
+		add_to_variable = { var = HNA_rebellion_xiangxi_trigger value = 1 }
+	}
+}
+
+country_event = {
+	id = HNA.15
+	title = HNA.15.t
+	desc = HNA.15.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.15"
+	}
+	
+	option = {
+		name = HNA.15.a
+		
+	}
+}
+country_event = {
+	id = HNA.16
+	title = HNA.16.t
+	desc = HNA.16.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.16"
+	}
+	
+	option = {
+		name = HNA.16.a
+		country_event = { id = HNA.17 }
+	}
+}
+
+country_event = {
+	id = HNA.17
+	title = HNA.17.t
+	desc = HNA.17.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.17"
+	}
+	
+	option = {
+		name = HNA.17.a
+		#TODO
+		OWNER = {
+			annex_country = { target = HNA }
+			#add advisor
+		}
+		#1)	«Это хороший обмен» (владелец HNA аннексирует HNA со всей армией, Хе Цзян станет доступен владельцу HNA в качестве министра, 
+		#TODO add event через 10 дней у владельца HNA произойдёт событие «Судьба восставших»)
+	}
+	option = {
+		name = HNA.17.b
+		#2)	«Мы будем защищать свою провинцию от посягательств центра!» (ответ виден, если на HNA сидит игрок; HNA объявит войну своему владельцу)
+	}
+}
+
+country_event = {
+	id = HNA.18
+	title = HNA.18.t
+	desc = HNA.18.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.18"
+	}
+	
+	option = {
+		name = HNA.18.a
+		
+	}
+}
+
+country_event = {
+	id = HNA.19
+	title = HNA.19.t
+	desc = HNA.19.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.19"
+	}
+	
+	option = {
+		name = HNA.19.a
+		
+	}
+}
+country_event = {
+	id = HNA.20
+	title = HNA.20.t
+	desc = HNA.20.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.20"
+	}
+	
+	option = {
+		name = HNA.20.a
+		#TODO Chen Cun will dead
+	}
+	option = {
+		name = HNA.20.b
+		add_political_power = -35
+	}
+	option = {
+		name = HNA.20.c
+		HNA = { country_event = { days = 15 id = HNA.21 } }
+	}
+}
+
+country_event = {
+	id = HNA.21
+	title = HNA.21.t
+	desc = HNA.21.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.21"
+	}
+	
+	option = {
+		name = HNA.21.a
+		#TODO Chen Cun will dead and Vosstanie
+	}
+}
+
+country_event = {
+	id = HNA.22
+	title = HNA.22.t
+	desc = HNA.22.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.22"
+	}
+
+	option = {
+		name = HNA.22.a
+		remove_ideas = HNA_uprising_xiangxi
+		add_to_variable = { var = HNA_rebellion_xiangxi_trigger value = -1 }
+
+		HNA = {
+			set_country_flag = same_ideology_civil_war_flag
+		}
+
+		start_civil_war = {
+			ideology = neutrality
+			size = 0.4
+			capital = 7101
+			states = {
+				750
+			}
+		}
+		hidden_effect = {
+			change_tag_from = ROOT
+			HNA = {
+				load_focus_tree = { tree = nw_hunan_focus keep_completed = no }
+				set_cosmetic_tag = HNA_Long_xiangxi
+			}
+		}
+		division_template = {
+			name = "Militia division"
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 0 y = 3 }
+			}
+		}
+		602 = {
+			create_unit = {
+				division = "name = \"Militia division\" division_template = \"Militia division\" start_experience_factor = 0.2" 
+				owner = HNA
+				count = 5
+				allow_spawning_on_enemy_provs = yes
+			}
+		}
+	}
+	option = {
+		name = HNA.22.b
+		remove_ideas = HNA_uprising_xiangxi
+		add_to_variable = { var = HNA_rebellion_xiangxi_trigger value = -1 }
+
+		HNA = {
+			set_country_flag = same_ideology_civil_war_flag
+		}
+		start_civil_war = {
+			ideology = neutrality
+			size = 0.4
+			capital = 7101
+			states = {
+				750
+			}
+			hidden_effect = {
+				change_tag_from = ROOT
+				D03 = {
+					set_cosmetic_tag = HNA_Long_xiangxi
+				}
+				D03 = {
+					load_focus_tree = { tree = nw_hunan_focus keep_completed = no }
+				}
+			}
+			division_template = {
+				name = "Militia division"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+				}
+			}
+			750 = {
+				create_unit = {
+					division = "name = \"Militia division\" division_template = \"Militia division\" start_experience_factor = 0.2" 
+					owner = HNA
+					count = 5
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = HNA.23
+	title = HNA.23.t
+	desc = HNA.23.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.23"
+	}
+
+	option = {
+		name = HNA.23.a
+		remove_ideas = HNA_uprising_xiangxi
+		add_to_variable = { var = HNA_rebellion_xiangxi_trigger value = -1 }
+
+		HNA = {
+			set_country_flag = same_ideology_civil_war_flag
+		}
+
+		start_civil_war = {
+			ideology = neutrality
+			size = 0.4
+			capital = 7101
+			states = {
+				750
+			}
+		}
+		hidden_effect = {
+			change_tag_from = ROOT
+			HNA = {
+				load_focus_tree = { tree = nw_hunan_focus keep_completed = no }
+				set_cosmetic_tag = HNA_Long_xiangxi
+			}
+		}
+		division_template = {
+			name = "Militia division"
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+			}
+		}
+		602 = {
+			create_unit = {
+				division = "name = \"Militia division\" division_template = \"Militia division\" start_experience_factor = 0.2" 
+				owner = HNA
+				count = 5
+				allow_spawning_on_enemy_provs = yes
+			}
+		}
+	}
+	option = {
+		name = HNA.23.b
+		remove_ideas = HNA_uprising_xiangxi
+		add_to_variable = { var = HNA_rebellion_xiangxi_trigger value = -1 }
+
+		HNA = {
+			set_country_flag = same_ideology_civil_war_flag
+		}
+		start_civil_war = {
+			ideology = neutrality
+			size = 0.4
+			capital = 7101
+			states = {
+				750
+			}
+			hidden_effect = {
+				change_tag_from = ROOT
+				D03 = {
+					set_cosmetic_tag = HNA_Long_xiangxi
+				}
+				D03 = {
+					load_focus_tree = { tree = nw_hunan_focus keep_completed = no }
+				}
+			}
+			division_template = {
+				name = "Militia division"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 1 y = 0 }
+				}
+			}
+			750 = {
+				create_unit = {
+					division = "name = \"Militia division\" division_template = \"Militia division\" start_experience_factor = 0.2" 
+					owner = D03
+					count = 3
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = HNA.24
+	title = HNA.24.t
+	desc = HNA.24.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.24"
+	}
+	
+	option = {
+		name = HNA.24.a
+		
+	}
+}
+
+country_event = {
+	id = HNA.25
+	title = HNA.25.t
+	desc = HNA.25.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.25"
+	}
+	
+	option = {
+		name = HNA.25.a
+		remove_ideas = HNA_uprising_xiangxi
+		add_to_variable = { var = HNA_rebellion_xiangxi_trigger value = -1 }
+	}
+}
+
+country_event = {
+	id = HNA.26
+	title = HNA.26.t
+	desc = HNA.26.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.26"
+	}
+	
+	option = {
+		name = HNA.26.a
+		remove_ideas = HNA_uprising_xiangxi
+		add_to_variable = { var = HNA_rebellion_xiangxi_trigger value = -1 }
+	}
+}
+
+country_event = {
+	id = HNA.27
+	title = HNA.27.t
+	desc = HNA.27.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.27"
+	}
+	
+	option = {
+		name = HNA.27.a
+		
+	}
+}
+
+country_event = {
+	id = HNA.28
+	title = HNA.28.t
+	desc = HNA.28.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.28"
+	}
+	
+	option = {
+		name = HNA.28.a
+		
+	}
+}
+
+country_event = {
+	id = HNA.29
+	title = HNA.29.t
+	desc = HNA.29.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.29"
+	}
+	
+	option = {
+		name = HNA.29.a
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05
+		}
+		add_political_power = 25
+		add_stability = 0.02
+	}
+	option = {
+		name = HNA.29.b
+		add_political_power = -100
+		add_stability = -0.02
+	}
+	option = {
+		name = HNA.29.c
+		add_popularity = {
+			ideology = communism
+			popularity = -0.01
+		}
+	}
+}
+
+country_event = {
+	id = HNA.30
+	title = HNA.30.t
+	desc = HNA.30.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.30"
+	}
+	
+	option = {
+		name = HNA.30.a
+		
+	}
+}
+
+country_event = {
+	id = HNA.31
+	title = HNA.31.t
+	desc = HNA.31.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.31"
+	}
+	
+	option = {
+		name = HNA.31.a
+		
+	}
+}
+
+country_event = {
+	id = HNA.32
+	title = HNA.32.t
+	desc = HNA.32.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.32"
+	}
+	
+	option = {
+		name = HNA.32.a
+		if = {
+			limit = {
+				 SHX = {
+					is_faction_leader = yes
+				 }
+			}
+			HNA = { country_event = { id = HNA.33 } }
+		}
+	}
+}
+
+country_event = {
+	id = HNA.33
+	title = HNA.33.t
+	desc = HNA.33.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.33"
+	}
+	
+	option = {
+		name = HNA.33.a
+		SHX = {
+			set_autonomy = {
+				target = HNA
+				autonomous_state = autonomy_socprotect
+			}
+		}
+		SHX = { country_event = { id = HNA.36 } } #TODO Create new event for SHX
+	}
+	option = {
+		name = HNA.33.b
+	}
+}
+
+country_event = {
+	id = HNA.34
+	title = HNA.34.t
+	desc = HNA.34.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.34"
+	}
+	
+	option = {
+		name = HNA.34.a
+		add_stability = 0.01
+	}
+}
+
+country_event = {
+	id = HNA.35
+	title = HNA.35.t
+	desc = HNA.35.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event HNA.35"
+	}
+	
+	option = {
+		name = HNA.35.a
+		if = {
+			limit = { has_country_leader = { character = HNA_he_jian } }
+			kill_country_leader = yes
+			#hidden_effect = {
+			#	BMD = {
+			#		retire_country_leader = yes
+		}
+		
+		HNA = { 
+		    set_politics = {
+		    	ruling_party = neutrality
+			    elections_allowed = no
+			}
+		}
+	}
+}
