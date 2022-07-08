@@ -28,7 +28,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_country_leader = { name = "He Jian" ruling_only = yes }
+			has_country_leader = { character = HNA_he_jian ruling_only = yes }
 		}
 
 		completion_reward = {
@@ -266,7 +266,6 @@ focus_tree = {
 		}
 
 		available = {
-			has_completed_focus = HNA_investment_social_sphere
 		}
 	
 		bypass = {
@@ -368,7 +367,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_country_leader = { name = "Zhao Hengti" ruling_only = yes }
+			has_country_leader = { character = HNA_zhao_hengti ruling_only = yes }
 		}
 		
 		bypass = {
@@ -694,7 +693,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_country_leader = { name = "Chen Quzhen" ruling_only = yes }
+			has_country_leader = { character = HNA_chen_quzhen ruling_only = yes }
 		}
 		
 		bypass = {
@@ -1047,7 +1046,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_country_leader = { name = "Long Yunfei" ruling_only = yes }
+			has_country_leader = { character = HNA_long_yunfei ruling_only = yes }
 		}
 		
 		bypass = {

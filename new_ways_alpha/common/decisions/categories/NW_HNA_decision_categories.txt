@@ -58,7 +58,7 @@ HNA_hunan_mission_category = {
 
 	allowed = {
 		original_tag = HNA
-		has_country_leader = { name = "He Jian" ruling_only = yes }
+		has_country_leader = { character = HNA_he_jian ruling_only = yes }
 	}
 }
 
@@ -77,6 +77,6 @@ HNA_rebellion_xiangxi_category = {
 
 	allowed = {
 		original_tag = HNA
-		has_country_leader = { name = "He Jian" ruling_only = yes }
+		has_country_leader = { character = HNA_he_jian ruling_only = yes }
 	}
 }

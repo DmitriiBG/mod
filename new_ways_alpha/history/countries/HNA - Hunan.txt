@@ -35,51 +35,9 @@ set_politics = {
 	elections_allowed = no
 }
 
-create_country_leader = {
-	name = "Long Yunfei"
-	desc = "POLITICS_LONG_YUNFEI_DESC"
-	picture = "gfx/leaders/HNA/Portrait_Long_Yunfei.dds"
-	expire = "1965.1.1"
-	ideology = despotism
-	traits = {
-		king_miao
-	}
-}
-
-create_country_leader = {
-	name = "He Jian"
-	desc = "POLITICS_He_Jian_DESC"
-	picture = "gfx/leaders/HNA/Portrait_He_Jian.dds"
-	expire = "1965.1.1"
-	ideology = despotism
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Zhao Hengti"
-	desc = "POLITICS_ZHAO_HENGTI_DESC"
-	picture = "gfx/leaders/HNA/Portrait_Zhao_Hengti.dds"
-	expire = "1965.1.1"
-	ideology = liberalism
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Chen Quzhen"
-	desc = "POLITICS_CHEN_QUZHEN_DESC"
-	picture = "gfx/leaders/HNA/Portrait_Chen_Quzhen.dds"
-	expire = "1965.1.1"
-	ideology = fascism_ideology
-	traits = {
-		king_of_xiangxi
-	}
-}
-
-
-
 recruit_character = HNA_he_jian
+recruit_character = HNA_long_yunfei
+recruit_character = HNA_chen_quzhen
 
 add_ideas = {
 	HNA_military_spending
