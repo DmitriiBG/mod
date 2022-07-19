@@ -309,7 +309,11 @@ HNA_rebellion_xiangxi_category = {
 			}
 			else_if = {
 				limit = { 
-					has_completed_focus = HNA_support_anti_jap_agenda
+					check_variable = { 
+						var = HNA_has_anti_jap_event 
+						value = 1 
+						compare = greater_than_or_equals 
+					}
 				}
 				country_event = { id = HNA.22 }
 			}
@@ -350,9 +354,10 @@ HNA_rebellion_xiangxi_category = {
 			random_list = {
 				25 = { 
 					750 = {
-						limit = {
-							industrial_complex  > 1
-						}
+						#todo
+						#limit = {
+						#	industrial_complex > 1
+						#}
 						damage_building = {
 							type = industrial_complex
 							damage = 2
@@ -361,9 +366,9 @@ HNA_rebellion_xiangxi_category = {
 				} 
 				25 = { 
 					750 = {
-						limit = {
-							infrastructure  > 1
-						}
+						#limit = {
+						#	infrastructure > 1
+						#}
 						damage_building = {
 							type = infrastructure
 							damage = 2
@@ -372,9 +377,9 @@ HNA_rebellion_xiangxi_category = {
 				} 
 				25 = {
 					750 = {
-						limit = {
-							arms_factory  > 1
-						}
+						#limit = {
+						#	arms_factory > 1
+						#}
 						damage_building = {
 							type = arms_factory
 							damage = 2

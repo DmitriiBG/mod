@@ -19,7 +19,6 @@ characters={
 		}
 		country_leader={
 			desc = POLITICS_HE_JIAN_DESC
-			picture = "gfx/leaders/HNA/Portrait_He_Jian.dds"
 			expire = "1965.1.1"
 			ideology = despotism
 			traits = {
@@ -46,7 +45,6 @@ characters={
 			logistics_skill = 2
 		}
 		country_leader={
-			name = HNA_long_yunfei
 			desc = POLITICS_LONG_YUNFEI_DESC
 			expire = "1965.1.1"
 			ideology = despotism
@@ -66,7 +64,6 @@ characters={
 			}
 		}
 		country_leader={
-			name = HNA_zhao_hengti
 			desc = POLITICS_ZHAO_HENGTI_DESC
 			expire = "1965.1.1"
 			ideology = liberalism
@@ -93,7 +90,6 @@ characters={
 			logistics_skill = 2
 		}
 		country_leader={
-			name = HNA_chen_quzhen
 			desc = POLITICS_CHEN_QUZHEN_DESC
 			expire = "1965.1.1"
 			ideology = despotism

@@ -37,6 +37,12 @@ focus_tree = {
 				path = { 602 593 }
 			}
 			country_event = { id = HNA.11 }
+			CHI = {
+				country_event = { id = HNA.11 }
+			}
+			GND = {
+				country_event = { id = HNA.11 }
+			}
 		}
 	}
 
@@ -52,12 +58,6 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {
-			has_completed_focus = HNA_end_building_railway
-		}
-		
-		bypass = {
-		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_cut_military_spending"
 			remove_ideas = HNA_military_spending
@@ -188,12 +188,6 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {
-			has_completed_focus = HNA_cut_military_spending
-		}
-	
-		bypass = {
-		}
 		completion_reward = {
 			add_ideas = HNA_increase_social_spending
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_investment_social_sphere"	
@@ -210,13 +204,6 @@ focus_tree = {
 		cost = 7
 		ai_will_do = {
 			factor = 1
-		}
-
-		available = {
-			has_completed_focus = HNA_agricultural_experiment_stations
-		}
-	
-		bypass = {
 		}
 
 		completion_reward = {
@@ -271,7 +258,6 @@ focus_tree = {
 		bypass = {
 		}
 		completion_reward = {
-			research_speed_factor = -0.02
 			army_experience = 30
 			add_command_power = 10
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_new_issue_school_army"	
@@ -285,7 +271,7 @@ focus_tree = {
 		prerequisite = { focus = HNA_investment_social_sphere }
 		x = -3
 		y = 3
-		cost = 
+		cost = 7
 		ai_will_do = {
 			factor = 1
 		}
@@ -315,12 +301,6 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {
-			has_completed_focus = HNA_investment_social_sphere
-		}
-	
-		bypass = {
-		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_civil_engineering_institute"
 			add_research_slot = 1
@@ -344,12 +324,6 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = {
-			has_completed_focus = HNA_xiangxi_autonomy
-		}
-	
-		bypass = {
-		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_administrative_reform"	
 			add_political_power = 100
@@ -390,17 +364,11 @@ focus_tree = {
 			factor = 5
 		}
 	
-		available = {
-		}
-		
-		bypass = {
-		}
-	
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_send_agitators_to_xiangxi"
 			division_template = {
 				name = "Hunan Agitators"
-				division_names_group = HNAA_INF_01
+				division_names_group = HNA_MIL_02
 				is_locked = yes
 				regiments = {
 					infantry = { x = 0 y = 0 }
@@ -412,10 +380,12 @@ focus_tree = {
 					artillery = { x = 0 y = 0 }
 				}
 			}
-			7279 = {
+
+			750 = {
 				create_unit = {
-					division = "division_template = \"Hunan Agitators\""
-					owner = ROOT
+					prioritize_location = 7279
+					division = "name = \"Hunan Agitators 1\" division_template = \"Hunan Agitators\" start_experience_factor = 0.4"
+					owner = HNA
 					count = 2
 				}
 			}
@@ -456,7 +426,7 @@ focus_tree = {
 		prerequisite = { focus = HNA_send_agitators_to_xiangxi }
 		x = 0
 		y = 2
-		cost = 7
+		cost = 4
 		ai_will_do = {
 			factor = 5
 		}
@@ -469,6 +439,20 @@ focus_tree = {
 		}
 	
 		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = HNA_convoke_provincial_yuan
+				}
+				country_event = { id = HNA.27 }
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = HNA_worldwide_autonomy
+					has_completed_focus = HNA_find_intellectuals_support
+				}
+				country_event = { id = HNA.27 }
+			}
+			else = {  }
 			# Если фокус выполнен позже чем через 100 после окончания ГВ, то произойдёт событие «Сопротивление независимых армий»: 27 TODO
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_stop_local_army"
 		}
@@ -608,7 +592,7 @@ focus_tree = {
 		prerequisite = { focus = HNA_new_constitution focus = HNA_old_constitution }
 		x = 0
 		y = 4
-		cost = 7
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -639,7 +623,7 @@ focus_tree = {
 		prerequisite = { focus = HNA_take_he_reforms }
 		x = 0
 		y = 5
-		cost = 7
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -656,7 +640,7 @@ focus_tree = {
 				remove_idea = HNA_reformed_police
 				add_idea = HNA_new_exemplary_police
 			}
-			remove_idea = HNA_rise_of_crime
+			remove_ideas = HNA_rise_of_crime
 		}
 	}
 	focus = {
@@ -666,7 +650,7 @@ focus_tree = {
 		prerequisite = { focus = HNA_take_he_reforms }
 		x = -2
 		y = 5
-		cost = 7
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -1180,16 +1164,21 @@ focus_tree = {
 				popularity = 0.1
 			}
 			add_political_power = 100
-
-#Как только будут выполнены фокусы «Продвижение мяо по карьерным лестницам» и «Аграрная реформа в пользу мяо», а Чэнь Цюйчжэнь доступен в качестве генерала, то произойдёт событие «Переворот против Луна»:  30
-#«Подозрения Луна Юнфэя в сторону его нелояльности в случае занятия высокого поста в армейской структуре провинции полностью подтвердились: после того, как Лун проводить свои реформы, нацеленные на подъём статуса и положения народа мяо в структуре управления провинцией, это вызвало резкое недовольство старой бюрократии и элит, у которых происходит отъём их рабочих мест и земель, принадлежащих им долгие десятилетия. Чэнь воспользовался этим недовольством, возглавив заговор против Луна, и при помощи своего силового аппарата сверг губернатора провинции, сделав это, однако, бескровно: Юнфэю позволили под конвоем покинуть территорию провинции»: 
-#1)	«Король свергнут. Да здравствует Король!» (Чэнь Цюйчжэнь станет лидером HNA, Лун Юнфэй перестанет быть доступным в качестве генерала, будут убраны нацдухи «Предвзятая аграрная реформа» и «Напряженность среди бюрократии»)
-
-#Как только будут выполнены фокусы «Продвижение мяо по карьерным лестницам» и «Аграрная реформа в пользу мяо», а Чэнь Цюйчжэнь недоступен в качестве генерала, но не находится в тюрьме, то произойдёт событие «Восстание Чэня Цюйчжэня»: 31
-#«После того, как мы начали проводить реформы, нацеленные на подъём статуса и положения народа мяо в структуре управления провинцией, это вызвало резкое недовольство старой бюрократии и элит, у которых происходит отъём их рабочих мест и земель, принадлежащих им долгие десятилетия. Чэнь Цюйчжэнь, находящейся на свободе после смены губернаторов, воспользовался этим недовольством возглавив восстание против нашей власти из Западной Хунани»: 
-#1)	«Вновь война центра против Запада…» (в HNA начнётся ГВ между авторитаристами во главе с Лун Юнфэем и авторитаристами во главе с Чэнь Цюйчжэнем, последние получат регион 750, армия разделится в отношении 1:2)
-#2)	«Король мяо слишком распоясался» (в HNA начнётся ГВ между авторитаристами во главе с Лун Юнфэем и авторитаристами во главе с Чэнь Цюйчжэнем, последние получат регион 750, армия разделится в отношении 1:2, игрок пересядет на Чэнь Цюйчжэня)
-
+			if = {
+				limit = {
+					has_completed_focus = HNA_agrarian_reform_miao
+					#todo if has active commander chen
+				}
+				country_event = { id = HNA.30 }
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = HNA_agrarian_reform_miao
+					#todo if has inactive commander chen and chen not in prison
+				}
+				country_event = { id = HNA.31 }
+			}
+			else = {  }
 		}
 	}
 	focus = {
@@ -1245,7 +1234,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_courts_agains_bandits"
-			remove_idea = HNA_rise_of_crime
+			remove_ideas = HNA_rise_of_crime
 		}
 	}
 	focus = {

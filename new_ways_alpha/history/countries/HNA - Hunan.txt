@@ -1,13 +1,5 @@
-﻿#capital = 611
-
+﻿
 oob = "HNA_1936"
-if = {
-	limit = { has_dlc = "Man the Guns" }
-		set_naval_oob = "HNA_1936_naval_mtg"
-	else = {
-		set_naval_oob = "HNA_1936_naval_legacy"
-	}
-}
 
 set_technology = {
 	#doctrines
@@ -37,7 +29,6 @@ set_politics = {
 
 recruit_character = HNA_he_jian
 recruit_character = HNA_long_yunfei
-recruit_character = HNA_chen_quzhen
 
 add_ideas = {
 	HNA_military_spending
