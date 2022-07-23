@@ -1,18 +1,3 @@
-HNA_mobilize_militia = {
-	icon = generic_political_actions
-	allowed = {
-		original_tag = DEN
-	}
-	visible = {
-		OR = {
-			has_government = monarchy
-			has_government = neutrality
-		}
-		has_completed_focus = DEN_government_of_christian_x_focus
-	}
-	priority = 95
-}
-
 HNA_hunan_policy_category = {
 	icon = GFX_decision_generic_arrest
 
