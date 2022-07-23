@@ -29,6 +29,8 @@ set_politics = {
 
 recruit_character = HNA_he_jian
 recruit_character = HNA_long_yunfei
+recruit_character = HNA_chen_quzhen
+recruit_character = HNA_zhao_hengti
 
 add_ideas = {
 	HNA_military_spending

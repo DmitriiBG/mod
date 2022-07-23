@@ -763,6 +763,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus HNA_establish_connections_xishan"
 			country_event = { id = HNA.32 }
+			# TODO Add SHX content
 			#HNA = {
 			#	add_opinion_modifier = { target = SHX modifier = axis_leanings_focus } 
 			#} add + 50 relations

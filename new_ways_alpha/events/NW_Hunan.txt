@@ -449,7 +449,7 @@ country_event = {
 	
 	option = {
 		name = HNA.20.a
-		#TODO Chen Cun will dead
+		retire_character = HNA_chen_quzhen
 	}
 	option = {
 		name = HNA.20.b
@@ -475,7 +475,8 @@ country_event = {
 	
 	option = {
 		name = HNA.21.a
-		#TODO Chen Cun will dead and days to rebellion will be increate to 50
+		retire_character = HNA_chen_quzhen
+		#TODO  days to rebellion will be increase 50
 	}
 }
 
@@ -976,13 +977,14 @@ country_event = {
 	
 	option = {
 		name = HNA.33.a
+		#TODO Create SHX content
 		SHX = {
 			set_autonomy = {
 				target = HNA
 				autonomous_state = autonomy_socprotect
 			}
 		}
-		SHX = { country_event = { id = HNA.36 } } #TODO Create new event for SHX
+		SHX = { country_event = { id = HNA.36 } }
 	}
 	option = {
 		name = HNA.33.b

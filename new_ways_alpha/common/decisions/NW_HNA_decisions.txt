@@ -296,9 +296,52 @@ HNA_rebellion_xiangxi_category = {
 		icon = GFX_decision_generic_arrest
 		fire_only_once = yes
 		priority = 21
-		days_remove = 365
+		days_mission_timeout = 365
+		
+		#TODO Add tooltip
+		visible = {
+			check_variable = { 
+				var = HNA_rebellion_xiangxi_trigger
+				value = 1 
+				compare = greater_than_or_equals 
+			}
+		}
 
-		remove_effect = {
+		allowed = {
+			original_tag = HNA
+		}
+
+		activation = {
+			check_variable = { 
+				var = HNA_rebellion_xiangxi_trigger
+				value = 1 
+				compare = greater_than_or_equals 
+			}
+		}
+
+		available = {
+			NOT = {
+				check_variable = { 
+					var = HNA_rebellion_xiangxi_trigger
+					value = 1 
+					compare = greater_than_or_equals 
+				}
+			}
+		}	
+
+		cancel_trigger = {
+			NOT = {
+				check_variable = { 
+					var = HNA_rebellion_xiangxi_trigger
+					value = 1 
+					compare = greater_than_or_equals 
+				}
+			}
+		}
+
+		is_good = yes
+
+		timeout_effect = {
 			if = {
 				limit = { 
 					is_subject = yes
@@ -321,43 +364,60 @@ HNA_rebellion_xiangxi_category = {
 				country_event = { id = HNA.23 }
 			} 
 		}
-
-		allowed = {
-			original_tag = HNA
-		}
-
-		visible = {
-			original_tag = HNA
-		}
-
-		available = {
-			original_tag = HNA
-		}
 	}
 
 	HNA_insurrection = {
 		icon = GFX_decision_generic_arrest
-		cost = 25
 		fire_only_once = no
 		priority = 21
-		days_remove = 90
+		days_mission_timeout = 90
 
-		custom_cost_trigger = {
-			set_temp_variable = { custom_cost_pp = 25 }
-			set_temp_variable = { command_power_temp_cost = 5 }
-			has_political_power > custom_cost_pp
-			command_power > command_power_temp_cost
+		visible = {
+			check_variable = { 
+				var = HNA_rebellion_xiangxi_trigger
+				value = 1 
+				compare = greater_than_or_equals 
+			}
 		}
-		custom_cost_text = pol_and_comnand_power_cost
 
-		complete_effect = {
+		allowed = {
+			controls_state = 750
+			original_tag = HNA
+		}
+
+		activation = {
+			controls_state = 750
+			check_variable = { 
+				var = HNA_rebellion_xiangxi_trigger
+				value = 1 
+				compare = greater_than_or_equals 
+			}
+		}
+
+		available = {
+			NOT = {
+				check_variable = { 
+					var = HNA_rebellion_xiangxi_trigger
+					value = 1 
+					compare = greater_than_or_equals 
+				}
+			}
+		}	
+
+		cancel_trigger = {
+			NOT = {
+				check_variable = { 
+					var = HNA_rebellion_xiangxi_trigger
+					value = 1 
+					compare = greater_than_or_equals 
+				}
+			}
+		}
+
+		timeout_effect = {
 			random_list = {
 				25 = { 
 					750 = {
-						#todo
-						#limit = {
-						#	industrial_complex > 1
-						#}
 						damage_building = {
 							type = industrial_complex
 							damage = 2
@@ -366,9 +426,6 @@ HNA_rebellion_xiangxi_category = {
 				} 
 				25 = { 
 					750 = {
-						#limit = {
-						#	infrastructure > 1
-						#}
 						damage_building = {
 							type = infrastructure
 							damage = 2
@@ -377,9 +434,6 @@ HNA_rebellion_xiangxi_category = {
 				} 
 				25 = {
 					750 = {
-						#limit = {
-						#	arms_factory > 1
-						#}
 						damage_building = {
 							type = arms_factory
 							damage = 2
@@ -388,18 +442,6 @@ HNA_rebellion_xiangxi_category = {
 				}
 				25 = { }
 			}
-		}
-
-		allowed = {
-			original_tag = HNA
-		}
-
-		visible = {
-			original_tag = HNA
-		}
-
-		available = {
-			original_tag = HNA
 		}
 	}
 
@@ -412,7 +454,6 @@ HNA_rebellion_xiangxi_category = {
 			country_event = { id = HNA.20 }
 		}
 		allowed = {
-			original_tag = HNA
 		}
 
 		visible = {
@@ -433,7 +474,6 @@ HNA_rebellion_xiangxi_category = {
 			country_event = { id = HNA.26 }
 		}
 		allowed = {
-			original_tag = HNA
 		}
 
 		visible = {
@@ -446,13 +486,14 @@ HNA_rebellion_xiangxi_category = {
 	}
 	HNA_start_suppression = {
 		icon = GFX_decision_generic_arrest
-		cost = 20
 		fire_only_once = no
 		priority = 21
 		complete_effect = {
-			#TODO
+			set_temp_variable = { add_value = 1 }
+			add_to_variable = { HNA_activate_suppression = add_value }
 		}
 		allowed = {
+			#TODO Add tooltop
 			original_tag = HNA
 		}
 
@@ -462,27 +503,65 @@ HNA_rebellion_xiangxi_category = {
 
 		available = {
 			original_tag = HNA
+			has_army_manpower = { size > 99999 }
+			divisions_in_state = { state = 750 size > 4 }
 		}
 	}
 	HNA_suppression_the_rebels = {
 		icon = GFX_decision_generic_arrest
-		cost = 50
 		fire_only_once = no
 		priority = 21
-		days_remove = 120
-		complete_effect = {
-			#TODO
+		days_mission_timeout = 150
+
+		visible = {
+			check_variable = { 
+				var = HNA_suppression_the_rebels
+				value = 1 
+				compare = greater_than_or_equals 
+			}
+			divisions_in_state = { state = 750 size > 4 }
 		}
+
 		allowed = {
 			original_tag = HNA
 		}
 
-		visible = {
-			original_tag = HNA
+		activation = {
+			check_variable = { 
+				var = HNA_suppression_the_rebels
+				value = 1 
+				compare = greater_than_or_equals 
+			}
 		}
 
 		available = {
-			is_subject = no
+			NOT = {
+				check_variable = { 
+					var = HNA_suppression_the_rebels
+					value = 1 
+					compare = greater_than_or_equals 
+				}
+			}
+		}	
+
+		cancel_trigger = {
+			NOT = {
+				check_variable = { 
+					var = HNA_suppression_the_rebels
+					value = 1 
+					compare = greater_than_or_equals 
+				}
+			}
+		}
+
+		is_good = no
+
+		timeout_effect = { #FAIL
+			country_event = { id = HNA.24 }
+		}
+
+		complete_effect = { #SUCCESS
+			country_event = { id = HNA.25 }
 		}
 	}
 }
