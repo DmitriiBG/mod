@@ -2,11 +2,9 @@ HNA_hunan_policy_category = {
 	
 	HNA_hunan_policy = {
 		icon = GFX_decision_generic_arrest
-		#cost = 100
-		cost = 5
+		cost = 100
 		fire_only_once = no
-		#days_remove = 30
-		days_remove = 5
+		days_remove = 30
 		priority = 21
 
 
